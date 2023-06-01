@@ -1,0 +1,1123 @@
+{
+  "version": "1",
+  "pip_version": "23.1.2",
+  "installed": [
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "Adafruit-Blinka",
+        "version": "8.16.1",
+        "summary": "CircuitPython APIs for non-CircuitPython versions of Python such as CPython on Linux and MicroPython.",
+        "description_content_type": "text/x-rst",
+        "home_page": "https://github.com/adafruit/Adafruit_Blinka",
+        "author": "Adafruit Industries",
+        "author_email": "circuitpython@adafruit.com",
+        "license": "MIT",
+        "classifier": [
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: Implementation :: MicroPython"
+        ],
+        "requires_dist": [
+          "Adafruit-PlatformDetect (>=3.13.0)",
+          "Adafruit-PureIO (>=1.1.7)",
+          "pyftdi (>=0.40.0)",
+          "adafruit-circuitpython-typing"
+        ],
+        "requires_python": ">=3.7.0",
+        "description": "\nIntroduction\n============\n\n.. image:: https://readthedocs.org/projects/adafruit-micropython-blinka/badge/?version=latest\n    :target: https://circuitpython.readthedocs.io/projects/blinka/en/latest/\n    :alt: Documentation Status\n\n.. image:: https://img.shields.io/discord/327254708534116352.svg\n    :target: https://adafru.it/discord\n    :alt: Discord\n\n.. image:: https://travis-ci.com/adafruit/Adafruit_Blinka.svg?branch=master\n    :target: https://travis-ci.com/adafruit/Adafruit_Blinka\n    :alt: Build Status\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n    :target: https://github.com/psf/black\n    :alt: Code Style: Black\n\nThis repository contains a selection of packages emulating the CircuitPython API\nfor devices or hosts running CPython or MicroPython. Working code exists to emulate these CircuitPython packages:\n\n* **analogio** - analog input/output pins, using pin identities from board+microcontroller packages\n* **bitbangio** - software-driven interfaces for I2C, SPI\n* **board** - breakout-specific pin identities\n* **busio** - hardware-driven interfaces for I2C, SPI, UART\n* **digitalio** - digital input/output pins, using pin identities from board+microcontroller packages\n* **keypad** - support for scanning keys and key matrices\n* **microcontroller** - chip-specific pin identities\n* **micropython** - MicroPython-specific module\n* **neopixel_write** - low-level interface to NeoPixels\n* **pulseio** - contains classes that provide access to basic pulse IO (PWM)\n* **pwmio** - contains classes that provide access to basic pulse IO (PWM)\n* **rainbowio** - provides the colorwheel() function\n* **usb_hid** - act as a hid-device using usb_gadget kernel driver\n\nFor details, see the `Blinka API reference\n<https://circuitpython.readthedocs.io/projects/blinka/en/latest/index.html>`_.\n\nDependencies\n=============\n\nThe emulation described above is intended to provide a\nCircuitPython-like API for devices which are running CPython or\nMicropython. Since corresponding packages should be built-in to any\nstandard CircuitPython image, they have no value on a device already\nrunning CircuitPython and would likely conflict in unhappy ways.\n\nThe test suites in the test/src folder under **testing.universal** are by design\nintended to run on *either* CircuitPython *or* CPython/Micropython+compatibility layer to prove conformance.\n\nInstalling from PyPI\n=====================\n\nOn supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from\nPyPI <https://pypi.org/project/Adafruit-Blinka/>`_. To install for current user:\n\n.. code-block:: shell\n\n    pip3 install Adafruit-Blinka\n\nTo install system-wide (this may be required in some cases):\n\n.. code-block:: shell\n\n    sudo pip3 install Adafruit-Blinka\n\nTo install in a virtual environment in your current project:\n\n.. code-block:: shell\n\n    mkdir project-name && cd project-name\n    python3 -m venv .env\n    source .env/bin/activate\n    pip3 install Adafruit-Blinka\n\nUsage Example\n=============\n\nAt the time of writing (`git:7fc1f8ab <https://github.com/cefn/Adafruit_Micropython_Blinka/tree/7fc1f8ab477124628a5afebbf6826005955805f9>`_),\nthe following sequence runs through some basic testing of the digitalio compatibility layer...\n\n.. code-block:: python\n\n    from testing import test_module_name\n    test_module_name(\"testing.universal.digitalio\")\n\nAn example log from running the suites is `here <https://github.com/cefn/Adafruit_Micropython_Blinka/issues/2#issuecomment-366713394>`_ .\n\nContributing\n============\n\nContributions are welcome! Please read our `Code of Conduct\n<https://github.com/adafruit/Adafruit_Blinka/blob/master/CODE_OF_CONDUCT.md>`_\nbefore contributing to help this project stay welcoming.\n\nBuilding locally\n================\n\nSphinx documentation\n-----------------------\n\nSphinx is used to build the documentation based on rST files and comments in the code. First,\ninstall dependencies (feel free to reuse the virtual environment from above):\n\n.. code-block:: shell\n\n    python3 -m venv .env\n    source .env/bin/activate\n    pip install Sphinx sphinx-rtd-theme Adafruit-PlatformDetect\n\nNow, once you have the virtual environment activated:\n\n.. code-block:: shell\n\n    cd docs\n    sphinx-build -E -W -b html . _build/html\n\nThis will output the documentation to ``docs/_build/html``. Open the index.html in your browser to\nview them. It will also (due to -W) error out on any warning like Travis will. This is a good way to\nlocally verify it will pass.\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/Adafruit_Blinka-8.16.1.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "Adafruit-PlatformDetect",
+        "version": "3.42.0",
+        "summary": "Platform detection for use by libraries like Adafruit-Blinka.",
+        "description_content_type": "text/x-rst",
+        "author_email": "Adafruit Industries <circuitpython@adafruit.com>",
+        "license": "MIT",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: System :: Hardware",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.7"
+        ],
+        "project_url": [
+          "Homepage, https://github.com/adafruit/Adafruit_Python_PlatformDetect"
+        ],
+        "description": "Introduction\n============\n\n.. image:: https://readthedocs.org/projects/adafruit-platformdetect/badge/?version=latest\n    :target: https://circuitpython.readthedocs.io/projects/platformdetect/en/latest/\n    :alt: Documentation Status\n\n.. image:: https://img.shields.io/discord/327254708534116352.svg\n    :target: https://adafru.it/discord\n    :alt: Discord\n\n.. image:: https://github.com/adafruit/Adafruit_Python_PlatformDetect/workflows/Build%20CI/badge.svg\n    :target: https://github.com/adafruit/Adafruit_Python_PlatformDetect/actions\n    :alt: Build Status\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n    :target: https://github.com/psf/black\n    :alt: Code Style: Black\n\nThis library provides best-guess platform detection for a range of single-board\ncomputers and (potentially) other platforms.  It was written primarily for use\nin `Adafruit_Blinka <https://github.com/adafruit/Adafruit_Blinka>`_, but may be\nuseful in other contexts.\n\nPlatform detection is divided into \"chip\" and \"board\" detection, with the latter\ngenerally dependent on the former.  Platform info is gathered from:\n\n  - Python's `sys.platform`\n\n  - Various files on Linux systems:\n\n    - /proc/cpuinfo (for processor info, Raspberry Pi hardware revisions, etc.)\n\n    - /proc/device-tree/compatible (for 96Boards info)\n\n  - Beaglebone EEPROM board IDs\n\n  - Distribution-specific files such as /etc/armbian-release.\n\nDependencies\n=============\nThis driver depends on:\n\n* Python 3.7 or higher\n\nInstalling from PyPI\n=====================\n\nOn supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from\nPyPI <https://pypi.org/project/Adafruit-PlatformDetect/>`_. To install for current user:\n\n.. code-block:: shell\n\n  pip3 install Adafruit-PlatformDetect\n\nTo install system-wide (this may be required in some cases):\n\n.. code-block:: shell\n\n  sudo pip3 install Adafruit-PlatformDetect\n\nTo install in a virtual environment in your current project:\n\n.. code-block:: shell\n\n  mkdir project-name && cd project-name\n  python3 -m venv .env\n  source .env/bin/activate\n  pip3 install Adafruit-PlatformDetect\n\nUsage Example\n=============\n\n.. code-block:: python\n\n  from adafruit_platformdetect import Detector\n  detector = Detector()\n  print(\"Chip id: \", detector.chip.id)\n  print(\"Board id: \", detector.board.id)\n\n  # Check for specific board models:\n  print(\"Pi 3B+? \", detector.board.RASPBERRY_PI_3B_PLUS)\n  print(\"BBB? \", detector.board.BEAGLEBONE_BLACK)\n  print(\"Orange Pi PC? \", detector.board.ORANGE_PI_PC)\n  print(\"generic Linux PC? \", detector.board.GENERIC_LINUX_PC)\n\nContributing\n============\n\nContributions are welcome! Please read our `Code of Conduct\n<https://github.com/adafruit/Adafruit_Python_PlatformDetect/blob/master/CODE_OF_CONDUCT.md>`_\nbefore contributing to help this project stay welcoming.\n\nDocumentation\n=============\n\nFor information on building library documentation, please check out `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/Adafruit_PlatformDetect-3.42.0.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "Adafruit-PureIO",
+        "version": "1.1.10",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Pure python (i.e. no native extensions) access to Linux IO    including I2C and SPI. Drop in replacement for smbus and spidev modules.",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "adafruit",
+          "blinka",
+          "micropython",
+          "pureio",
+          "ioctl",
+          "spi",
+          "i2c",
+          "python"
+        ],
+        "home_page": "https://github.com/adafruit/Adafruit_Python_PureIO",
+        "author": "Adafruit Industries",
+        "author_email": "circuitpython@adafruit.com",
+        "license": "MIT",
+        "classifier": [
+          "Development Status :: 3 - Alpha",
+          "Intended Audience :: Developers",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: System :: Hardware",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: Implementation :: CPython"
+        ],
+        "requires_python": ">=3.5.0",
+        "description": "\nIntroduction\n============\n\n.. image:: https://readthedocs.org/projects/adafruit-pureio/badge/?version=latest\n    :target: https://adafruit-pureio.readthedocs.io/en/latest/\n    :alt: Documentation Status\n\n.. image:: https://img.shields.io/discord/327254708534116352.svg\n    :target: https://adafru.it/discord\n    :alt: Discord\n\n.. image:: https://github.com/adafruit/Adafruit_Python_PureIO/workflows/Build%20CI/badge.svg\n    :target: https://github.com/adafruit/Adafruit_Python_PureIO/actions\n    :alt: Build Status\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n    :target: https://github.com/psf/black\n    :alt: Code Style: Black\n\nPure python (i.e. no native extensions) access to Linux IO including I2C and SPI. Drop in replacement for smbus and spidev modules.\n\n\nDependencies\n=============\nThis driver depends on:\n\n* Python 3.5 or higher\n\nInstalling from PyPI\n=====================\n\nOn supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from\nPyPI <https://pypi.org/project/Adafruit-PureIO/>`_. To install for current user:\n\n.. code-block:: shell\n\n    pip3 install Adafruit-PureIO\n\nTo install system-wide (this may be required in some cases):\n\n.. code-block:: shell\n\n    sudo pip3 install Adafruit-PureIO\n\nTo install in a virtual environment in your current project:\n\n.. code-block:: shell\n\n    mkdir project-name && cd project-name\n    python3 -m venv .env\n    source .env/bin/activate\n    pip3 install Adafruit-PureIO\n\nContributing\n============\n\nContributions are welcome! Please read our `Code of Conduct\n<https://github.com/adafruit/Adafruit_Python_PureIO/blob/master/CODE_OF_CONDUCT.md>`_\nbefore contributing to help this project stay welcoming.\n\nDocumentation\n=============\n\nFor information on building library documentation, please check out `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.\n\n\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/Adafruit_PureIO-1.1.10.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "adafruit-circuitpython-busdevice",
+        "version": "5.2.4",
+        "summary": "CircuitPython bus device classes to manage bus sharing.",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "adafruit",
+          "spi",
+          "i2c",
+          "bus",
+          "device",
+          "micropython",
+          "circuitpython"
+        ],
+        "author_email": "Adafruit Industries <circuitpython@adafruit.com>",
+        "license": "MIT",
+        "classifier": [
+          "Intended Audience :: Developers",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Software Development :: Embedded Systems",
+          "Topic :: System :: Hardware",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 3"
+        ],
+        "requires_dist": [
+          "Adafruit-Blinka (>=7.0.0)",
+          "adafruit-circuitpython-typing"
+        ],
+        "project_url": [
+          "Homepage, https://github.com/adafruit/Adafruit_CircuitPython_BusDevice"
+        ],
+        "provides_extra": [
+          "optional"
+        ],
+        "description": "Adafruit CircuitPython BusDevice\n================================\n\n.. image:: https://readthedocs.org/projects/adafruit-circuitpython-busdevice/badge/?version=latest\n    :target: https://docs.circuitpython.org/projects/busdevice/en/latest/\n    :alt: Documentation Status\n\n.. image:: https://raw.githubusercontent.com/adafruit/Adafruit_CircuitPython_Bundle/main/badges/adafruit_discord.svg\n    :target: https://adafru.it/discord\n    :alt: Discord\n\n.. image:: https://github.com/adafruit/Adafruit_CircuitPython_BusDevice/workflows/Build%20CI/badge.svg\n    :target: https://github.com/adafruit/Adafruit_CircuitPython_BusDevice/actions/\n    :alt: Build Status\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n    :target: https://github.com/psf/black\n    :alt: Code Style: Black\n\nThe ``I2CDevice`` and ``SPIDevice`` helper classes make managing transaction state\non a bus easy. For example, they manage locking the bus to prevent other\nconcurrent access. For SPI devices, it manages the chip select and protocol\nchanges such as mode. For I2C, it manages the device address.\n\n.. _bus_device_installation:\n\n.. note:: On microcontroller boards using CircuitPython v6.3.0 or newer, the firmware\n    may already have the ``adafruit_bus_device`` package builtin, thus there may be no\n    need to add this package to your CIRCUITPY drive's \"lib\" directory. If both the\n    builtin and add-on ``adafruit_bus_device`` packages are present, then some\n    libraries that require this package *might* have problems importing it.\n\n    Please check the `CircuitPython documentation's \"module support matrix\"\n    <https://docs.circuitpython.org/en/latest/shared-bindings/support_matrix.html>`_\n    to make sure that your board's firmware does include the builtin ``adafruit_bus_device``\n    package.\n\nOn supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from\nPyPI <https://pypi.org/project/adafruit-circuitpython-busdevice/>`_. To install for current user:\n\n.. code-block:: shell\n\n    pip3 install adafruit-circuitpython-busdevice\n\nTo install system-wide (this may be required in some cases):\n\n.. code-block:: shell\n\n    sudo pip3 install adafruit-circuitpython-busdevice\n\nTo install in a virtual environment in your current project:\n\n.. code-block:: shell\n\n    mkdir project-name && cd project-name\n    python3 -m venv .venv\n    source .venv/bin/activate\n    pip3 install adafruit-circuitpython-busdevice\n\nUsage Example\n=============\n\nSee examples/read_register_i2c.py and examples/read_register_spi.py for examples of the module's usage.\n\nDocumentation\n=============\n\nAPI documentation for this library can be found on `Read the Docs <https://docs.circuitpython.org/projects/busdevice/en/latest/>`_.\n\nFor information on building library documentation, please check out `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.\n\nContributing\n============\n\nContributions are welcome! Please read our `Code of Conduct\n<https://github.com/adafruit/Adafruit_CircuitPython_BusDevice/blob/main/CODE_OF_CONDUCT.md>`_\nbefore contributing to help this project stay welcoming.\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/adafruit_circuitpython_busdevice-5.2.4.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "adafruit-circuitpython-dht",
+        "version": "3.7.8",
+        "summary": "CircuitPython support for DHT11 and DHT22 type temperature/humidity devices",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "adafruit",
+          "dht",
+          "hardware",
+          "sensors",
+          "temperature",
+          "humidity",
+          "micropython",
+          "circuitpython"
+        ],
+        "author_email": "Adafruit Industries <circuitpython@adafruit.com>",
+        "license": "MIT",
+        "classifier": [
+          "Intended Audience :: Developers",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Software Development :: Embedded Systems",
+          "Topic :: System :: Hardware",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 3"
+        ],
+        "requires_dist": [
+          "Adafruit-Blinka"
+        ],
+        "project_url": [
+          "Homepage, https://github.com/adafruit/Adafruit_CircuitPython_DHT"
+        ],
+        "provides_extra": [
+          "optional"
+        ],
+        "description": "\nIntroduction\n============\n\n.. image:: https://readthedocs.org/projects/adafruit-circuitpython-dht/badge/?version=latest\n    :target: https://docs.circuitpython.org/projects/dht/en/latest/\n    :alt: Documentation Status\n\n\n.. image:: https://raw.githubusercontent.com/adafruit/Adafruit_CircuitPython_Bundle/main/badges/adafruit_discord.svg\n    :target: https://adafru.it/discord\n    :alt: Discord\n\n.. image:: https://github.com/adafruit/Adafruit_CircuitPython_DHT/workflows/Build%20CI/badge.svg\n    :target: https://github.com/adafruit/Adafruit_CircuitPython_DHT/actions\n    :alt: Build Status\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n    :target: https://github.com/psf/black\n    :alt: Code Style: Black\n\nCircuitPython support for the DHT11 and DHT22 temperature and humidity devices.\n\nDependencies\n=============\nThis driver depends on:\n\n* `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_\n\nPlease ensure all dependencies are available on the CircuitPython filesystem.\nThis is easily achieved by downloading\n`the Adafruit library and driver bundle <https://github.com/adafruit/Adafruit_CircuitPython_Bundle>`_.\n\n.. note::\n     This library uses the `pulseio` module in CircuitPython. As of CircuitPython 7.0.0, `pulseio` is\n     no longer available on the smallest CircuitPython builds,\n     such as the Trinket M0, Gemma M0, and Feather M0 Basic boards.\n     You can substitute a more modern sensor, which will work better as well.\n     See the guide `Modern Replacements for DHT11 and DHT22 Sensors\n     <https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors>`_\n     for suggestions.\n\nInstalling from PyPI\n====================\n\nOn supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from\nPyPI <https://pypi.org/project/adafruit-circuitpython-dht/>`_. To install for current user:\n\n.. code-block:: shell\n\n    pip3 install adafruit-circuitpython-dht\n\nTo install system-wide (this may be required in some cases):\n\n.. code-block:: shell\n\n    sudo pip3 install adafruit-circuitpython-dht\n\nTo install in a virtual environment in your current project:\n\n.. code-block:: shell\n\n    mkdir project-name && cd project-name\n    python3 -m venv .venv\n    source .venv/bin/activate\n    pip3 install adafruit-circuitpython-dht\n\nUsage Example\n==============\n\nHardware Set-up\n----------------\n\nDesigned specifically to work with the Adafruit DHT series sensors:\n\n* Adafruit `DHT22 temperature-humidity sensor + extras <https://www.adafruit.com/products/385>`_\n* Adafruit `DHT11 temperature-humidity sensor + extras <https://www.adafruit.com/products/386>`_\n\n.. note::\n    DHT11 and DHT22 devices both need a pull-resistor on the data signal wire. This resistor is in the range of 1k to 5k\n\n\n* Please check the device datasheet for the appropriate value.\n* Be sure that you are running the Buster Operating System.\n* Make sure that your user is part of the ``gpio`` group.\n\n\nKnown Issues\n------------\n\n* The library may or may not work in Linux 64-bit platforms.\n* The Raspberry PI Zero does not provide reliable readings.\n* Readings in FeatherS2 does not work as expected.\n\n.. note::\n     Using a more modern sensor will avoid these issues.\n     See the guide `Modern Replacements for DHT11 and DHT22 Sensors\n     <https://learn.adafruit.com/modern-replacements-for-dht11-dht22-sensors>`_.\n\nBasics\n-------\n\nOf course, you must import the library to use it:\n\n.. code:: python\n\n    import adafruit_dht\n\nThe DHT type devices use single data wire, so import the board pin\n\n.. code:: python\n\n    from board import <pin>\n\nNow, to initialize the DHT11 device:\n\n.. code:: python\n\n    dht_device = adafruit_dht.DHT11(<pin>)\n\nOR initialize the DHT22 device:\n\n.. code:: python\n\n    dht_device = adafruit_dht.DHT22(<pin>)\n\nRead temperature and humidity\n------------------------------\n\nNow get the temperature and humidity values\n\n.. code:: python\n\n    temperature = dht_device.temperature\n    humidity = dht_device.humidity\n\nThese properties may raise an exception if a problem occurs.  You should use try/raise\nlogic and catch RuntimeError and then retry getting the values after at least 2 seconds.\nIf you try again to get a result within 2 seconds, cached values are returned.\n\nDocumentation\n=============\n\nAPI documentation for this library can be found on `Read the Docs <https://docs.circuitpython.org/projects/dht/en/latest/>`_.\n\nFor information on building library documentation, please check out `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.\n\nContributing\n============\n\nContributions are welcome! Please read our `Code of Conduct\n<https://github.com/adafruit/Adafruit_CircuitPython_DHT/blob/main/CODE_OF_CONDUCT.md>`_\nbefore contributing to help this project stay welcoming.\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/adafruit_circuitpython_dht-3.7.8.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "adafruit-circuitpython-requests",
+        "version": "1.13.0",
+        "summary": "A requests-like library for web interfacing",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "adafruit",
+          "blinka",
+          "circuitpython",
+          "micropython",
+          "requests",
+          "requests",
+          "",
+          "networking"
+        ],
+        "author_email": "Adafruit Industries <circuitpython@adafruit.com>",
+        "license": "MIT",
+        "classifier": [
+          "Intended Audience :: Developers",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Software Development :: Embedded Systems",
+          "Topic :: System :: Hardware",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 3"
+        ],
+        "requires_dist": [
+          "Adafruit-Blinka"
+        ],
+        "project_url": [
+          "Homepage, https://github.com/adafruit/Adafruit_CircuitPython_Requests"
+        ],
+        "provides_extra": [
+          "optional"
+        ],
+        "description": "Introduction\n============\n\n.. image:: https://readthedocs.org/projects/adafruit-circuitpython-requests/badge/?version=latest\n    :target: https://docs.circuitpython.org/projects/requests/en/latest/\n    :alt: Documentation Status\n\n.. image:: https://raw.githubusercontent.com/adafruit/Adafruit_CircuitPython_Bundle/main/badges/adafruit_discord.svg\n    :target: https://adafru.it/discord\n    :alt: Discord\n\n.. image:: https://github.com/adafruit/Adafruit_CircuitPython_Requests/workflows/Build%20CI/badge.svg\n    :target: https://github.com/adafruit/Adafruit_CircuitPython_Requests/actions/\n    :alt: Build Status\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n    :target: https://github.com/psf/black\n    :alt: Code Style: Black\n\nA requests-like library for HTTP commands.\n\n\nDependencies\n=============\nThis driver depends on:\n\n* `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_\n\nPlease ensure all dependencies are available on the CircuitPython filesystem.\nThis is easily achieved by downloading\n`the Adafruit library and driver bundle <https://github.com/adafruit/Adafruit_CircuitPython_Bundle>`_.\n\nInstalling from PyPI\n=====================\nOn supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from\nPyPI <https://pypi.org/project/adafruit-circuitpython-requests/>`_. To install for current user:\n\n.. code-block:: shell\n\n    pip3 install adafruit-circuitpython-requests\n\nTo install system-wide (this may be required in some cases):\n\n.. code-block:: shell\n\n    sudo pip3 install adafruit-circuitpython-requests\n\nTo install in a virtual environment in your current project:\n\n.. code-block:: shell\n\n    mkdir project-name && cd project-name\n    python3 -m venv .venv\n    source .venv/bin/activate\n    pip3 install adafruit-circuitpython-requests\n\nUsage Example\n=============\n\nUsage examples are within the `examples` subfolder of this library.\n\nDocumentation\n=============\n\nAPI documentation for this library can be found on `Read the Docs <https://docs.circuitpython.org/projects/requests/en/latest/>`_.\n\nFor information on building library documentation, please check out `this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.\n\nContributing\n============\n\nContributions are welcome! Please read our `Code of Conduct\n<https://github.com/adafruit/Adafruit_CircuitPython_Requests/blob/main/CODE_OF_CONDUCT.md>`_\nbefore contributing to help this project stay welcoming.\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/adafruit_circuitpython_requests-1.13.0.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "adafruit-circuitpython-typing",
+        "version": "1.9.0",
+        "summary": "Types needed for type annotation that are not in `typing`",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "adafruit",
+          "blinka",
+          "circuitpython",
+          "micropython",
+          "circuitpython_typing"
+        ],
+        "author_email": "Adafruit Industries <circuitpython@adafruit.com>",
+        "license": "MIT",
+        "classifier": [
+          "Intended Audience :: Developers",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Software Development :: Embedded Systems",
+          "Topic :: System :: Hardware",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 3"
+        ],
+        "requires_dist": [
+          "Adafruit-Blinka",
+          "adafruit-circuitpython-busdevice",
+          "adafruit-circuitpython-requests",
+          "typing-extensions (~=4.0)"
+        ],
+        "project_url": [
+          "Homepage, https://github.com/adafruit/Adafruit_CircuitPython_Typing"
+        ],
+        "provides_extra": [
+          "optional"
+        ],
+        "description": "Introduction\n============\n\n.. image:: https://readthedocs.org/projects/adafruit-circuitpython-typing/badge/?version=latest\n    :target: https://docs.circuitpython.org/projects/adafruit-circuitpython-typing/en/latest/\n    :alt: Documentation Status\n\n.. image:: https://github.com/adafruit/Adafruit_CircuitPython_Bundle/blob/main/badges/adafruit_discord.svg\n    :target: https://adafru.it/discord\n    :alt: Discord\n\n.. image:: https://github.com/adafruit/Adafruit_CircuitPython_Typing/workflows/Build%20CI/badge.svg\n    :target: https://github.com/adafruit/Adafruit_CircuitPython_Typing/actions\n    :alt: Build Status\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n    :target: https://github.com/psf/black\n    :alt: Code Style: Black\n\nDefinitions not in the standard `typing` module that are\nneeded for type annotation of CircuitPython code.\n\nThis library is not needed at runtime for CircuitPython code, and does not need to be in the bundle.\n\n\nDependencies\n=============\n\n\n\nInstalling from PyPI\n=====================\n\nOn supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from\nPyPI <https://pypi.org/project/adafruit-circuitpython-typing/>`_.\nTo install for current user:\n\n.. code-block:: shell\n\n    pip3 install adafruit-circuitpython-typing\n\nTo install system-wide (this may be required in some cases):\n\n.. code-block:: shell\n\n    sudo pip3 install adafruit-circuitpython-typing\n\nTo install in a virtual environment in your current project:\n\n.. code-block:: shell\n\n    mkdir project-name && cd project-name\n    python3 -m venv .venv\n    source .venv/bin/activate\n    pip3 install adafruit-circuitpython-typing\n\n\nDocumentation\n=============\nAPI documentation for this library can be found on `Read the Docs <https://docs.circuitpython.org/projects/circuitpython_typing/en/latest/>`_.\n\nFor information on building library documentation, please check out\n`this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.\n\nContributing\n============\n\nContributions are welcome! Please read our `Code of Conduct\n<https://github.com/adafruit/Adafruit_CircuitPython_Typing/blob/HEAD/CODE_OF_CONDUCT.md>`_\nbefore contributing to help this project stay welcoming.\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/adafruit_circuitpython_typing-1.9.0.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "pip",
+        "version": "23.1.2",
+        "summary": "The PyPA recommended tool for installing Python packages.",
+        "home_page": "https://pip.pypa.io/",
+        "author": "The pip developers",
+        "author_email": "distutils-sig@python.org",
+        "license": "MIT",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Topic :: Software Development :: Build Tools",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy"
+        ],
+        "requires_python": ">=3.7",
+        "project_url": [
+          "Documentation, https://pip.pypa.io",
+          "Source, https://github.com/pypa/pip",
+          "Changelog, https://pip.pypa.io/en/stable/news/"
+        ],
+        "description": "pip - The Python Package Installer\n==================================\n\n.. image:: https://img.shields.io/pypi/v/pip.svg\n   :target: https://pypi.org/project/pip/\n\n.. image:: https://readthedocs.org/projects/pip/badge/?version=latest\n   :target: https://pip.pypa.io/en/latest\n\npip is the `package installer`_ for Python. You can use pip to install packages from the `Python Package Index`_ and other indexes.\n\nPlease take a look at our documentation for how to install and use pip:\n\n* `Installation`_\n* `Usage`_\n\nWe release updates regularly, with a new version every 3 months. Find more details in our documentation:\n\n* `Release notes`_\n* `Release process`_\n\nIn pip 20.3, we've `made a big improvement to the heart of pip`_; `learn more`_. We want your input, so `sign up for our user experience research studies`_ to help us do it right.\n\n**Note**: pip 21.0, in January 2021, removed Python 2 support, per pip's `Python 2 support policy`_. Please migrate to Python 3.\n\nIf you find bugs, need help, or want to talk to the developers, please use our mailing lists or chat rooms:\n\n* `Issue tracking`_\n* `Discourse channel`_\n* `User IRC`_\n\nIf you want to get involved head over to GitHub to get the source code, look at our development documentation and feel free to jump on the developer mailing lists and chat rooms:\n\n* `GitHub page`_\n* `Development documentation`_\n* `Development IRC`_\n\nCode of Conduct\n---------------\n\nEveryone interacting in the pip project's codebases, issue trackers, chat\nrooms, and mailing lists is expected to follow the `PSF Code of Conduct`_.\n\n.. _package installer: https://packaging.python.org/guides/tool-recommendations/\n.. _Python Package Index: https://pypi.org\n.. _Installation: https://pip.pypa.io/en/stable/installation/\n.. _Usage: https://pip.pypa.io/en/stable/\n.. _Release notes: https://pip.pypa.io/en/stable/news.html\n.. _Release process: https://pip.pypa.io/en/latest/development/release-process/\n.. _GitHub page: https://github.com/pypa/pip\n.. _Development documentation: https://pip.pypa.io/en/latest/development\n.. _made a big improvement to the heart of pip: https://pyfound.blogspot.com/2020/11/pip-20-3-new-resolver.html\n.. _learn more: https://pip.pypa.io/en/latest/user_guide/#changes-to-the-pip-dependency-resolver-in-20-3-2020\n.. _sign up for our user experience research studies: https://pyfound.blogspot.com/2020/03/new-pip-resolver-to-roll-out-this-year.html\n.. _Python 2 support policy: https://pip.pypa.io/en/latest/development/release-process/#python-2-support\n.. _Issue tracking: https://github.com/pypa/pip/issues\n.. _Discourse channel: https://discuss.python.org/c/packaging\n.. _User IRC: https://kiwiirc.com/nextclient/#ircs://irc.libera.chat:+6697/pypa\n.. _Development IRC: https://kiwiirc.com/nextclient/#ircs://irc.libera.chat:+6697/pypa-dev\n.. _PSF Code of Conduct: https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/pip-23.1.2.dist-info",
+      "installer": "pip",
+      "requested": true
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "pyftdi",
+        "version": "0.54.0",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "FTDI device driver (pure Python)",
+        "keywords": [
+          "driver",
+          "ftdi",
+          "usb",
+          "serial",
+          "spi",
+          "i2c",
+          "twi",
+          "rs232",
+          "gpio",
+          "bit-bang"
+        ],
+        "home_page": "http://github.com/eblot/pyftdi",
+        "author": "Emmanuel Blot",
+        "author_email": "emmanuel.blot@free.fr",
+        "maintainer": "Emmanuel Blot",
+        "maintainer_email": "emmanuel.blot@free.fr",
+        "license": "Modified BSD",
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Environment :: Other Environment",
+          "Natural Language :: English",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: BSD License",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: POSIX",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: System :: Hardware :: Hardware Drivers"
+        ],
+        "requires_dist": [
+          "pyusb (!=1.2.0,>=1.0.0)",
+          "pyserial (>=3.0)"
+        ],
+        "requires_python": ">=3.7",
+        "description": "PyFtdi\n======\n\n.. cannot use defs.rst here, as PyPi wants a standalone file.\n.. |I2C| replace:: I\\ :sup:`2`\\ C\n\nDocumentation\n-------------\n\nThe latest PyFtdi online documentation is always available from\n`here <https://eblot.github.io/pyftdi>`_.\n\nBeware the online version may be more recent than the PyPI hosted version, as\nintermediate development versions are not published to\n`PyPi <https://pypi.org/project/pyftdi>`_.\n\nPyFtdi documentation can be locally build with Sphinx, see the installation\ninstructions.\n\nSource code\n-----------\n\nPyFtdi releases are available from the Python Package Index from\n`PyPi <https://pypi.org/project/pyftdi>`_.\n\nPyFtdi development code is available from\n`GitHub <https://github.com/eblot/pyftdi>`_.\n\nOverview\n--------\n\nPyFtdi aims at providing a user-space driver for popular FTDI devices,\nimplemented in pure Python language.\n\nSupported FTDI devices include:\n\n* UART and GPIO bridges\n\n  * FT232R (single port, 3Mbps)\n  * FT230X/FT231X/FT234X (single port, 3Mbps)\n\n* UART and multi-serial protocols (SPI, |I2C|, JTAG) bridges\n\n  * FT2232C/D (dual port, clock up to 6 MHz)\n  * FT232H (single port, clock up to 30 MHz)\n  * FT2232H (dual port, clock up to 30 MHz)\n  * FT4232H (quad port, clock up to 30 MHz)\n\nFeatures\n--------\n\nPyFtdi currently supports the following features:\n\n* UART/Serial USB converter, up to 12Mbps (depending on the FTDI device\n  capability)\n* GPIO/Bitbang support, with 8-bit asynchronous, 8-bit synchronous and\n  8-/16-bit MPSSE variants\n* SPI master, with simultanous GPIO support, up to 12 pins per port,\n  with support for non-byte sized transfer\n* |I2C| master, with simultanous GPIO support, up to 14 pins per port\n* Basic JTAG master capabilities\n* EEPROM support (some parameters cannot yet be modified, only retrieved)\n* Experimental CBUS support on selected devices, 4 pins per port\n\nSupported host OSes\n-------------------\n\n* macOS\n* Linux\n* FreeBSD\n* Windows, although not officially supported\n\n\n\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/pyftdi-0.54.0.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.0",
+        "name": "pyserial",
+        "version": "3.5",
+        "platform": [
+          "any"
+        ],
+        "summary": "Python Serial Port Extension",
+        "home_page": "https://github.com/pyserial/pyserial",
+        "author": "Chris Liechti",
+        "author_email": "cliechti@gmx.net",
+        "license": "BSD",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Intended Audience :: End Users/Desktop",
+          "License :: OSI Approved :: BSD License",
+          "Natural Language :: English",
+          "Operating System :: POSIX",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: MacOS :: MacOS X",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Topic :: Communications",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: Terminals :: Serial"
+        ],
+        "requires_dist": [
+          "hidapi; extra == 'cp2110'"
+        ],
+        "provides_extra": [
+          "cp2110",
+          "cp2110"
+        ],
+        "description": "Python Serial Port Extension for Win32, OSX, Linux, BSD, Jython, IronPython\n\nStable:\n\n- Documentation: http://pythonhosted.org/pyserial/\n- Download Page: https://pypi.python.org/pypi/pyserial\n\nLatest:\n\n- Documentation: http://pyserial.readthedocs.io/en/latest/\n- Project Homepage: https://github.com/pyserial/pyserial\n\n\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/pyserial-3.5.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "pyusb",
+        "version": "1.2.1",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Python USB access module",
+        "home_page": "https://pyusb.github.io/pyusb",
+        "author": "Jonas Malaco",
+        "author_email": "me@jonasmalaco.com",
+        "license": "UNKNOWN",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Intended Audience :: Information Technology",
+          "Intended Audience :: Manufacturing",
+          "Intended Audience :: Science/Research",
+          "Intended Audience :: System Administrators",
+          "Intended Audience :: Telecommunications Industry",
+          "License :: OSI Approved :: BSD License",
+          "Natural Language :: English",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: Microsoft :: Windows :: Windows Vista",
+          "Operating System :: Microsoft :: Windows :: Windows 7",
+          "Operating System :: Microsoft :: Windows :: Windows 10",
+          "Operating System :: POSIX :: BSD :: FreeBSD",
+          "Operating System :: POSIX :: BSD :: NetBSD",
+          "Operating System :: POSIX :: BSD :: OpenBSD",
+          "Operating System :: POSIX :: Linux",
+          "Operating System :: POSIX :: SunOS/Solaris",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: IronPython",
+          "Programming Language :: Python :: Implementation :: Jython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: System :: Hardware :: Hardware Drivers"
+        ],
+        "requires_python": ">=3.6.0",
+        "description": "\nPyUSB offers easy USB devices communication in Python.\nIt should work without additional code in any environment with\nPython >= 3.6, ctypes and a pre-built USB backend library\n(currently: libusb 1.x, libusb 0.1.x or OpenUSB).\n\n\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/pyusb-1.2.1.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "setuptools",
+        "version": "67.8.0",
+        "summary": "Easily download, build, install, upgrade, and uninstall Python packages",
+        "keywords": [
+          "CPAN",
+          "PyPI",
+          "distutils",
+          "eggs",
+          "package",
+          "management"
+        ],
+        "home_page": "https://github.com/pypa/setuptools",
+        "author": "Python Packaging Authority",
+        "author_email": "distutils-sig@python.org",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: System :: Archiving :: Packaging",
+          "Topic :: System :: Systems Administration",
+          "Topic :: Utilities"
+        ],
+        "requires_dist": [
+          "sphinx (>=3.5) ; extra == 'docs'",
+          "jaraco.packaging (>=9) ; extra == 'docs'",
+          "rst.linker (>=1.9) ; extra == 'docs'",
+          "furo ; extra == 'docs'",
+          "sphinx-lint ; extra == 'docs'",
+          "jaraco.tidelift (>=1.4) ; extra == 'docs'",
+          "pygments-github-lexers (==0.0.5) ; extra == 'docs'",
+          "sphinx-favicon ; extra == 'docs'",
+          "sphinx-inline-tabs ; extra == 'docs'",
+          "sphinx-reredirects ; extra == 'docs'",
+          "sphinxcontrib-towncrier ; extra == 'docs'",
+          "sphinx-notfound-page (==0.8.3) ; extra == 'docs'",
+          "sphinx-hoverxref (<2) ; extra == 'docs'",
+          "pytest (>=6) ; extra == 'testing'",
+          "pytest-checkdocs (>=2.4) ; extra == 'testing'",
+          "pytest-enabler (>=1.3) ; extra == 'testing'",
+          "flake8-2020 ; extra == 'testing'",
+          "virtualenv (>=13.0.0) ; extra == 'testing'",
+          "wheel ; extra == 'testing'",
+          "pip (>=19.1) ; extra == 'testing'",
+          "jaraco.envs (>=2.2) ; extra == 'testing'",
+          "pytest-xdist ; extra == 'testing'",
+          "jaraco.path (>=3.2.0) ; extra == 'testing'",
+          "build[virtualenv] ; extra == 'testing'",
+          "filelock (>=3.4.0) ; extra == 'testing'",
+          "pip-run (>=8.8) ; extra == 'testing'",
+          "ini2toml[lite] (>=0.9) ; extra == 'testing'",
+          "tomli-w (>=1.0.0) ; extra == 'testing'",
+          "pytest-timeout ; extra == 'testing'",
+          "pytest-perf ; extra == 'testing'",
+          "pytest ; extra == 'testing-integration'",
+          "pytest-xdist ; extra == 'testing-integration'",
+          "pytest-enabler ; extra == 'testing-integration'",
+          "virtualenv (>=13.0.0) ; extra == 'testing-integration'",
+          "tomli ; extra == 'testing-integration'",
+          "wheel ; extra == 'testing-integration'",
+          "jaraco.path (>=3.2.0) ; extra == 'testing-integration'",
+          "jaraco.envs (>=2.2) ; extra == 'testing-integration'",
+          "build[virtualenv] ; extra == 'testing-integration'",
+          "filelock (>=3.4.0) ; extra == 'testing-integration'",
+          "pytest-black (>=0.3.7) ; (platform_python_implementation != \"PyPy\") and extra == 'testing'",
+          "pytest-cov ; (platform_python_implementation != \"PyPy\") and extra == 'testing'",
+          "pytest-mypy (>=0.9.1) ; (platform_python_implementation != \"PyPy\") and extra == 'testing'",
+          "pytest-ruff ; (sys_platform != \"cygwin\") and extra == 'testing'"
+        ],
+        "requires_python": ">=3.7",
+        "project_url": [
+          "Documentation, https://setuptools.pypa.io/",
+          "Changelog, https://setuptools.pypa.io/en/stable/history.html"
+        ],
+        "provides_extra": [
+          "certs",
+          "docs",
+          "ssl",
+          "testing",
+          "testing-integration"
+        ],
+        "description": ".. image:: https://img.shields.io/pypi/v/setuptools.svg\n   :target: https://pypi.org/project/setuptools\n\n.. image:: https://img.shields.io/pypi/pyversions/setuptools.svg\n\n.. image:: https://github.com/pypa/setuptools/workflows/tests/badge.svg\n   :target: https://github.com/pypa/setuptools/actions?query=workflow%3A%22tests%22\n   :alt: tests\n\n.. image:: https://img.shields.io/badge/code%20style-black-000000.svg\n   :target: https://github.com/psf/black\n   :alt: Code style: Black\n\n.. image:: https://img.shields.io/readthedocs/setuptools/latest.svg\n    :target: https://setuptools.pypa.io\n\n.. image:: https://img.shields.io/badge/skeleton-2023-informational\n   :target: https://blog.jaraco.com/skeleton\n\n.. image:: https://img.shields.io/codecov/c/github/pypa/setuptools/master.svg?logo=codecov&logoColor=white\n   :target: https://codecov.io/gh/pypa/setuptools\n\n.. image:: https://tidelift.com/badges/github/pypa/setuptools?style=flat\n   :target: https://tidelift.com/subscription/pkg/pypi-setuptools?utm_source=pypi-setuptools&utm_medium=readme\n\n.. image:: https://img.shields.io/discord/803025117553754132\n   :target: https://discord.com/channels/803025117553754132/815945031150993468\n   :alt: Discord\n\nSee the `Installation Instructions\n<https://packaging.python.org/installing/>`_ in the Python Packaging\nUser's Guide for instructions on installing, upgrading, and uninstalling\nSetuptools.\n\nQuestions and comments should be directed to `GitHub Discussions\n<https://github.com/pypa/setuptools/discussions>`_.\nBug reports and especially tested patches may be\nsubmitted directly to the `bug tracker\n<https://github.com/pypa/setuptools/issues>`_.\n\n\nCode of Conduct\n===============\n\nEveryone interacting in the setuptools project's codebases, issue trackers,\nchat rooms, and fora is expected to follow the\n`PSF Code of Conduct <https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md>`_.\n\n\nFor Enterprise\n==============\n\nAvailable as part of the Tidelift Subscription.\n\nSetuptools and the maintainers of thousands of other packages are working with Tidelift to deliver one enterprise subscription that covers all of the open source you use.\n\n`Learn more <https://tidelift.com/subscription/pkg/pypi-setuptools?utm_source=pypi-setuptools&utm_medium=referral&utm_campaign=github>`_.\n\n\nSecurity Contact\n================\n\nTo report a security vulnerability, please use the\n`Tidelift security contact <https://tidelift.com/security>`_.\nTidelift will coordinate the fix and disclosure.\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/setuptools-67.8.0.dist-info",
+      "installer": "pip",
+      "requested": true
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "typing_extensions",
+        "version": "4.5.0",
+        "summary": "Backported and Experimental Type Hints for Python 3.7+",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "annotations",
+          "backport",
+          "checker",
+          "checking",
+          "function",
+          "hinting",
+          "hints",
+          "type",
+          "typechecking",
+          "typehinting",
+          "typehints",
+          "typing"
+        ],
+        "author_email": "\"Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee\" <levkivskyi@gmail.com>",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Console",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Python Software Foundation License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Topic :: Software Development"
+        ],
+        "requires_python": ">=3.7",
+        "project_url": [
+          "Bug Tracker, https://github.com/python/typing_extensions/issues",
+          "Changes, https://github.com/python/typing_extensions/blob/main/CHANGELOG.md",
+          "Documentation, https://typing.readthedocs.io/",
+          "Home, https://github.com/python/typing_extensions",
+          "Q & A, https://github.com/python/typing/discussions",
+          "Repository, https://github.com/python/typing_extensions"
+        ],
+        "description": "# Typing Extensions\n\n[![Chat at https://gitter.im/python/typing](https://badges.gitter.im/python/typing.svg)](https://gitter.im/python/typing)\n\n## Overview\n\nThe `typing_extensions` module serves two related purposes:\n\n- Enable use of new type system features on older Python versions. For example,\n  `typing.TypeGuard` is new in Python 3.10, but `typing_extensions` allows\n  users on previous Python versions to use it too.\n- Enable experimentation with new type system PEPs before they are accepted and\n  added to the `typing` module.\n\nNew features may be added to `typing_extensions` as soon as they are specified\nin a PEP that has been added to the [python/peps](https://github.com/python/peps)\nrepository. If the PEP is accepted, the feature will then be added to `typing`\nfor the next CPython release. No typing PEP has been rejected so far, so we\nhaven't yet figured out how to deal with that possibility.\n\nStarting with version 4.0.0, `typing_extensions` uses\n[Semantic Versioning](https://semver.org/). The\nmajor version is incremented for all backwards-incompatible changes.\nTherefore, it's safe to depend\non `typing_extensions` like this: `typing_extensions >=x.y, <(x+1)`,\nwhere `x.y` is the first version that includes all features you need.\n\n`typing_extensions` supports Python versions 3.7 and higher. In the future,\nsupport for older Python versions will be dropped some time after that version\nreaches end of life.\n\n## Included items\n\nThis module currently contains the following:\n\n- Experimental features\n\n  - `override` (see [PEP 698](https://peps.python.org/pep-0698/))\n  - The `default=` argument to `TypeVar`, `ParamSpec`, and `TypeVarTuple` (see [PEP 696](https://peps.python.org/pep-0696/))\n  - The `infer_variance=` argument to `TypeVar` (see [PEP 695](https://peps.python.org/pep-0695/))\n  - The `@deprecated` decorator (see [PEP 702](https://peps.python.org/pep-0702/))\n\n- In `typing` since Python 3.11\n\n  - `assert_never`\n  - `assert_type`\n  - `clear_overloads`\n  - `@dataclass_transform()` (see [PEP 681](https://peps.python.org/pep-0681/))\n  - `get_overloads`\n  - `LiteralString` (see [PEP 675](https://peps.python.org/pep-0675/))\n  - `Never`\n  - `NotRequired` (see [PEP 655](https://peps.python.org/pep-0655/))\n  - `reveal_type`\n  - `Required` (see [PEP 655](https://peps.python.org/pep-0655/))\n  - `Self` (see [PEP 673](https://peps.python.org/pep-0673/))\n  - `TypeVarTuple` (see [PEP 646](https://peps.python.org/pep-0646/); the `typing_extensions` version supports the `default=` argument from [PEP 696](https://peps.python.org/pep-0696/))\n  - `Unpack` (see [PEP 646](https://peps.python.org/pep-0646/))\n\n- In `typing` since Python 3.10\n\n  - `Concatenate` (see [PEP 612](https://peps.python.org/pep-0612/))\n  - `ParamSpec` (see [PEP 612](https://peps.python.org/pep-0612/); the `typing_extensions` version supports the `default=` argument from [PEP 696](https://peps.python.org/pep-0696/))\n  - `ParamSpecArgs` (see [PEP 612](https://peps.python.org/pep-0612/))\n  - `ParamSpecKwargs` (see [PEP 612](https://peps.python.org/pep-0612/))\n  - `TypeAlias` (see [PEP 613](https://peps.python.org/pep-0613/))\n  - `TypeGuard` (see [PEP 647](https://peps.python.org/pep-0647/))\n  - `is_typeddict`\n\n- In `typing` since Python 3.9\n\n  - `Annotated` (see [PEP 593](https://peps.python.org/pep-0593/))\n\n- In `typing` since Python 3.8\n\n  - `final` (see [PEP 591](https://peps.python.org/pep-0591/))\n  - `Final` (see [PEP 591](https://peps.python.org/pep-0591/))\n  - `Literal` (see [PEP 586](https://peps.python.org/pep-0586/))\n  - `Protocol` (see [PEP 544](https://peps.python.org/pep-0544/))\n  - `runtime_checkable` (see [PEP 544](https://peps.python.org/pep-0544/))\n  - `TypedDict` (see [PEP 589](https://peps.python.org/pep-0589/))\n  - `get_origin` (`typing_extensions` provides this function only in Python 3.7+)\n  - `get_args` (`typing_extensions` provides this function only in Python 3.7+)\n\n- In `typing` since Python 3.7\n\n  - `OrderedDict`\n\n- In `typing` since Python 3.5 or 3.6 (see [the typing documentation](https://docs.python.org/3.10/library/typing.html) for details)\n\n  - `AsyncContextManager`\n  - `AsyncGenerator`\n  - `AsyncIterable`\n  - `AsyncIterator`\n  - `Awaitable`\n  - `ChainMap`\n  - `ClassVar` (see [PEP 526](https://peps.python.org/pep-0526/))\n  - `ContextManager`\n  - `Coroutine`\n  - `Counter`\n  - `DefaultDict`\n  - `Deque`\n  - `NewType`\n  - `NoReturn`\n  - `overload`\n  - `Text`\n  - `Type`\n  - `TYPE_CHECKING`\n  - `get_type_hints`\n\n- The following have always been present in `typing`, but the `typing_extensions` versions provide\n  additional features:\n\n  - `Any` (supports inheritance since Python 3.11)\n  - `NamedTuple` (supports multiple inheritance with `Generic` since Python 3.11)\n  - `TypeVar` (see PEPs [695](https://peps.python.org/pep-0695/) and [696](https://peps.python.org/pep-0696/))\n\n# Other Notes and Limitations\n\nCertain objects were changed after they were added to `typing`, and\n`typing_extensions` provides a backport even on newer Python versions:\n\n- `TypedDict` does not store runtime information\n  about which (if any) keys are non-required in Python 3.8, and does not\n  honor the `total` keyword with old-style `TypedDict()` in Python\n  3.9.0 and 3.9.1. `TypedDict` also does not support multiple inheritance\n  with `typing.Generic` on Python <3.11.\n- `get_origin` and `get_args` lack support for `Annotated` in\n  Python 3.8 and lack support for `ParamSpecArgs` and `ParamSpecKwargs`\n  in 3.9.\n- `@final` was changed in Python 3.11 to set the `.__final__` attribute.\n- `@overload` was changed in Python 3.11 to make function overloads\n  introspectable at runtime. In order to access overloads with\n  `typing_extensions.get_overloads()`, you must use\n  `@typing_extensions.overload`.\n- `NamedTuple` was changed in Python 3.11 to allow for multiple inheritance\n  with `typing.Generic`.\n- Since Python 3.11, it has been possible to inherit from `Any` at\n  runtime. `typing_extensions.Any` also provides this capability.\n- `TypeVar` gains two additional parameters, `default=` and `infer_variance=`,\n  in the draft PEPs [695](https://peps.python.org/pep-0695/) and [696](https://peps.python.org/pep-0696/), which are being considered for inclusion\n  in Python 3.12.\n\nThere are a few types whose interface was modified between different\nversions of typing. For example, `typing.Sequence` was modified to\nsubclass `typing.Reversible` as of Python 3.5.3.\n\nThese changes are _not_ backported to prevent subtle compatibility\nissues when mixing the differing implementations of modified classes.\n\nCertain types have incorrect runtime behavior due to limitations of older\nversions of the typing module:\n\n- `ParamSpec` and `Concatenate` will not work with `get_args` and\n  `get_origin`. Certain [PEP 612](https://peps.python.org/pep-0612/) special cases in user-defined\n  `Generic`s are also not available.\n\nThese types are only guaranteed to work for static type checking.\n\n## Running tests\n\nTo run tests, navigate into the appropriate source directory and run\n`test_typing_extensions.py`.\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/typing_extensions-4.5.0.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "wheel",
+        "version": "0.40.0",
+        "summary": "A built-package format for Python",
+        "description_content_type": "text/x-rst",
+        "keywords": [
+          "wheel",
+          "packaging"
+        ],
+        "author_email": "Daniel Holth <dholth@fastmail.fm>",
+        "maintainer_email": "Alex Grönholm <alex.gronholm@nextday.fi>",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Topic :: System :: Archiving :: Packaging",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11"
+        ],
+        "requires_dist": [
+          "pytest >= 6.0.0 ; extra == \"test\""
+        ],
+        "requires_python": ">=3.7",
+        "project_url": [
+          "Changelog, https://wheel.readthedocs.io/en/stable/news.html",
+          "Documentation, https://wheel.readthedocs.io/",
+          "Issue Tracker, https://github.com/pypa/wheel/issues"
+        ],
+        "provides_extra": [
+          "test"
+        ],
+        "description": "wheel\n=====\n\nThis library is the reference implementation of the Python wheel packaging\nstandard, as defined in `PEP 427`_.\n\nIt has two different roles:\n\n#. A setuptools_ extension for building wheels that provides the\n   ``bdist_wheel`` setuptools command\n#. A command line tool for working with wheel files\n\nIt should be noted that wheel is **not** intended to be used as a library, and\nas such there is no stable, public API.\n\n.. _PEP 427: https://www.python.org/dev/peps/pep-0427/\n.. _setuptools: https://pypi.org/project/setuptools/\n\nDocumentation\n-------------\n\nThe documentation_ can be found on Read The Docs.\n\n.. _documentation: https://wheel.readthedocs.io/\n\nCode of Conduct\n---------------\n\nEveryone interacting in the wheel project's codebases, issue trackers, chat\nrooms, and mailing lists is expected to follow the `PSF Code of Conduct`_.\n\n.. _PSF Code of Conduct: https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md\n\n"
+      },
+      "metadata_location": "/usr/local/lib/python3.7/dist-packages/wheel-0.40.0.dist-info",
+      "installer": "pip",
+      "requested": false
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.2",
+        "name": "PyGObject",
+        "version": "3.30.4",
+        "platform": [
+          "POSIX, Windows"
+        ],
+        "summary": "Python bindings for GObject Introspection",
+        "description": ".. image:: https://pygobject.readthedocs.io/en/latest/_images/pygobject.svg\n           :align: center\n           :width: 400px\n           :height: 98px\n        \n        |\n        \n        **PyGObject** is a Python package which provides bindings for `GObject\n        <https://developer.gnome.org/gobject/stable/>`__ based libraries such as `GTK+\n        <https://www.gtk.org/>`__, `GStreamer <https://gstreamer.freedesktop.org/>`__,\n        `WebKitGTK+ <https://webkitgtk.org/>`__, `GLib\n        <https://developer.gnome.org/glib/stable/>`__, `GIO\n        <https://developer.gnome.org/gio/stable/>`__ and many more.\n        \n        It supports Linux, Windows and macOS and works with **Python 2.7+**, **Python\n        3.5+**, **PyPy** and **PyPy3**. PyGObject, including this documentation, is\n        licensed under the **LGPLv2.1+**.\n        \n        \n        ----\n        \n        For more information visit https://pygobject.readthedocs.io\n        ",
+        "home_page": "https://pygobject.readthedocs.io",
+        "author": "James Henstridge",
+        "author_email": "james@daa.com.au",
+        "maintainer": "Simon Feltman",
+        "maintainer_email": "sfeltman@src.gnome.org",
+        "license": "GNU LGPL",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
+          "Operating System :: POSIX",
+          "Operating System :: Microsoft :: Windows",
+          "Programming Language :: C",
+          "Programming Language :: Python",
+          "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "requires_dist": [
+          "pycairo>=1.11.1"
+        ]
+      },
+      "metadata_location": "/usr/lib/python3/dist-packages/PyGObject-3.30.4.egg-info"
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.1",
+        "name": "SecretStorage",
+        "version": "2.3.1",
+        "platform": [
+          "Linux"
+        ],
+        "summary": "Python bindings to FreeDesktop.org Secret Service API",
+        "description": "\n        .. image:: https://api.travis-ci.org/mitya57/secretstorage.svg\n           :target: https://travis-ci.org/mitya57/secretstorage\n           :alt: Travis CI status\n        \n        Module description\n        ==================\n        \n        This module provides a way for securely storing passwords and other secrets.\n        \n        It uses D-Bus `Secret Service`_ API that is supported by GNOME Keyring\n        (since version 2.30) and KSecretsService.\n        \n        The main classes provided are ``secretstorage.Item``, representing a secret\n        item (that has a *label*, a *secret* and some *attributes*) and\n        ``secretstorage.Collection``, a place items are stored in.\n        \n        SecretStorage supports most of the functions provided by Secret Service,\n        including creating and deleting items and collections, editing items,\n        locking and unlocking collections (asynchronous unlocking is also supported).\n        \n        The documentation can be found on `secretstorage.readthedocs.io`_.\n        \n        .. _`Secret Service`: https://specifications.freedesktop.org/secret-service/\n        .. _`secretstorage.readthedocs.io`: https://secretstorage.readthedocs.io/en/latest/\n        \n        Building the module\n        ===================\n        \n        .. note::\n           SecretStorage supports Python 2.7 and all versions of Python since 3.3.\n           Here we assume that your Python version is 3.x.\n        \n        SecretStorage requires these packages to work:\n        \n        * `dbus-python`_\n        * `python-cryptography`_\n        \n        To build SecretStorage, use this command::\n        \n           python3 setup.py build\n        \n        If you have Sphinx_ installed, you can also build the documentation::\n        \n           python3 setup.py build_sphinx\n        \n        .. _`dbus-python`: https://www.freedesktop.org/wiki/Software/DBusBindings/#dbus-python\n        .. _`python-cryptography`: https://pypi.python.org/pypi/cryptography\n        .. _Sphinx: http://sphinx-doc.org/\n        \n        Testing the module\n        ==================\n        \n        First, make sure that you have the Secret Service daemon installed.\n        The `GNOME Keyring`_ is the reference server-side implementation for the\n        Secret Service specification.\n        \n        .. _`GNOME Keyring`: https://download.gnome.org/sources/gnome-keyring/\n        \n        Then, start the daemon and unlock the ``default`` collection, if needed.\n        The testsuite will fail to run if the ``default`` collection exists and is\n        locked. If it does not exist, the testsuite can also use the temporary\n        ``session`` collection, as provided by the GNOME Keyring.\n        \n        Then, run the Python unittest module::\n        \n           python3 -m unittest discover -s tests\n        \n        If you want to run the tests in an isolated or headless environment, run\n        this command in a D-Bus session::\n        \n           dbus-run-session -- python3 -m unittest discover -s tests\n        \n        Get the code\n        ============\n        \n        SecretStorage is available under BSD license. The source code can be found\n        on GitHub_.\n        \n        .. _GitHub: https://github.com/mitya57/secretstorage\n        ",
+        "home_page": "https://github.com/mitya57/secretstorage",
+        "author": "Dmitry Shachnev",
+        "author_email": "mitya57@gmail.com",
+        "license": "BSD",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "License :: OSI Approved :: BSD License",
+          "Operating System :: POSIX",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Topic :: Security",
+          "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "requires_dist": [
+          "dbus-python ; extra == \"dbus-python\""
+        ],
+        "provides_extra": [
+          "dbus-python"
+        ]
+      },
+      "metadata_location": "/usr/lib/python3/dist-packages/SecretStorage-2.3.1.egg-info"
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.1",
+        "name": "asn1crypto",
+        "version": "0.24.0",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Fast ASN.1 parser and serializer with definitions for private keys, public keys, certificates, CRL, OCSP, CMS, PKCS#3, PKCS#7, PKCS#8, PKCS#12, PKCS#5, X.509 and TSP",
+        "description": "Docs for this project are maintained at https://github.com/wbond/asn1crypto#readme.",
+        "description_content_type": "UNKNOWN",
+        "keywords": [
+          "asn1",
+          "crypto",
+          "pki",
+          "x509",
+          "certificate",
+          "rsa",
+          "dsa",
+          "ec",
+          "dh"
+        ],
+        "home_page": "https://github.com/wbond/asn1crypto",
+        "author": "wbond",
+        "author_email": "will@wbond.net",
+        "license": "MIT",
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 2.6",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3.2",
+          "Programming Language :: Python :: 3.3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Security :: Cryptography"
+        ]
+      },
+      "metadata_location": "/usr/lib/python3/dist-packages/asn1crypto-0.24.0.egg-info"
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "cryptography",
+        "version": "2.6.1",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "cryptography is a package which provides cryptographic recipes and primitives to Python developers.",
+        "description": "pyca/cryptography\n        =================\n        \n        .. image:: https://img.shields.io/pypi/v/cryptography.svg\n            :target: https://pypi.org/project/cryptography/\n            :alt: Latest Version\n        \n        .. image:: https://readthedocs.org/projects/cryptography/badge/?version=latest\n            :target: https://cryptography.io\n            :alt: Latest Docs\n        \n        .. image:: https://travis-ci.org/pyca/cryptography.svg?branch=master\n            :target: https://travis-ci.org/pyca/cryptography\n        \n        .. image:: https://codecov.io/github/pyca/cryptography/coverage.svg?branch=master\n            :target: https://codecov.io/github/pyca/cryptography?branch=master\n        \n        \n        ``cryptography`` is a package which provides cryptographic recipes and\n        primitives to Python developers.  Our goal is for it to be your \"cryptographic\n        standard library\". It supports Python 2.7, Python 3.4+, and PyPy 5.4+.\n        \n        ``cryptography`` includes both high level recipes and low level interfaces to\n        common cryptographic algorithms such as symmetric ciphers, message digests, and\n        key derivation functions. For example, to encrypt something with\n        ``cryptography``'s high level symmetric encryption recipe:\n        \n        .. code-block:: pycon\n        \n            >>> from cryptography.fernet import Fernet\n            >>> # Put this somewhere safe!\n            >>> key = Fernet.generate_key()\n            >>> f = Fernet(key)\n            >>> token = f.encrypt(b\"A really secret message. Not for prying eyes.\")\n            >>> token\n            '...'\n            >>> f.decrypt(token)\n            'A really secret message. Not for prying eyes.'\n        \n        You can find more information in the `documentation`_.\n        \n        You can install ``cryptography`` with:\n        \n        .. code-block:: console\n        \n            $ pip install cryptography\n        \n        For full details see `the installation documentation`_.\n        \n        Discussion\n        ~~~~~~~~~~\n        \n        If you run into bugs, you can file them in our `issue tracker`_.\n        \n        We maintain a `cryptography-dev`_ mailing list for development discussion.\n        \n        You can also join ``#cryptography-dev`` on Freenode to ask questions or get\n        involved.\n        \n        Security\n        ~~~~~~~~\n        \n        Need to report a security issue? Please consult our `security reporting`_\n        documentation.\n        \n        \n        .. _`documentation`: https://cryptography.io/\n        .. _`the installation documentation`: https://cryptography.io/en/latest/installation/\n        .. _`issue tracker`: https://github.com/pyca/cryptography/issues\n        .. _`cryptography-dev`: https://mail.python.org/mailman/listinfo/cryptography-dev\n        .. _`security reporting`: https://cryptography.io/en/latest/security/\n        ",
+        "home_page": "https://github.com/pyca/cryptography",
+        "author": "The cryptography developers",
+        "author_email": "cryptography-dev@python.org",
+        "license": "BSD or Apache License, Version 2.0",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "License :: OSI Approved :: BSD License",
+          "Natural Language :: English",
+          "Operating System :: MacOS :: MacOS X",
+          "Operating System :: POSIX",
+          "Operating System :: POSIX :: BSD",
+          "Operating System :: POSIX :: Linux",
+          "Operating System :: Microsoft :: Windows",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Security :: Cryptography"
+        ],
+        "requires_dist": [
+          "enum34 ; python_version < '3'",
+          "ipaddress ; python_version < '3'",
+          "sphinx!=1.8.0,>=1.6.5 ; extra == \"docs\"",
+          "sphinx_rtd_theme ; extra == \"docs\"",
+          "doc8 ; extra == \"docstest\"",
+          "pyenchant>=1.6.11 ; extra == \"docstest\"",
+          "sphinxcontrib-spelling>=4.0.1 ; extra == \"docstest\"",
+          "twine>=1.12.0 ; extra == \"docstest\"",
+          "idna>=2.1 ; extra == \"idna\"",
+          "flake8 ; extra == \"pep8test\"",
+          "flake8-import-order ; extra == \"pep8test\"",
+          "pep8-naming ; extra == \"pep8test\"",
+          "cryptography_vectors==2.6.1 ; extra == \"test\"",
+          "hypothesis!=3.79.2,>=1.11.4 ; extra == \"test\"",
+          "iso8601 ; extra == \"test\"",
+          "pretend ; extra == \"test\"",
+          "pytest!=3.9.0,!=3.9.1,!=3.9.2,>=3.6.0 ; extra == \"test\"",
+          "pytz ; extra == \"test\""
+        ],
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*",
+        "provides_extra": [
+          "docs",
+          "docstest",
+          "idna",
+          "pep8test",
+          "test"
+        ]
+      },
+      "metadata_location": "/usr/lib/python3/dist-packages/cryptography-2.6.1.egg-info"
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.1",
+        "name": "entrypoints",
+        "version": "0.3",
+        "summary": "Discover and load entry points from installed packages",
+        "author": "Thomas Kluyver",
+        "author_email": "thomas@kluyver.me.uk",
+        "classifier": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      "metadata_location": null
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "keyring",
+        "version": "17.1.1",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Store and access your passwords safely.",
+        "description": ".. image:: https://img.shields.io/pypi/v/keyring.svg\n           :target: https://pypi.org/project/keyring\n        \n        .. image:: https://img.shields.io/pypi/pyversions/keyring.svg\n        \n        .. image:: https://img.shields.io/travis/jaraco/keyring/master.svg\n           :target: https://travis-ci.org/jaraco/keyring\n        \n        .. image:: https://img.shields.io/appveyor/ci/jaraco/keyring/master.svg\n           :target: https://ci.appveyor.com/project/jaraco/keyring/branch/master\n        \n        .. image:: https://readthedocs.org/projects/keyring/badge/?version=latest\n           :target: https://keyring.readthedocs.io/en/latest/?badge=latest\n        \n        =======================================\n        Installing and Using Python Keyring Lib\n        =======================================\n        \n        .. contents:: **Table of Contents**\n        \n        ---------------------------\n        What is Python keyring lib?\n        ---------------------------\n        \n        The Python keyring lib provides an easy way to access the system keyring service\n        from python. It can be used in any application that needs safe password storage.\n        \n        The keyring library is licensed under both the `MIT license\n        <http://opensource.org/licenses/MIT>`_ and the PSF license.\n        \n        These recommended keyring backends are supported by the Python keyring lib:\n        \n        * macOS `Keychain\n          <https://en.wikipedia.org/wiki/Keychain_%28software%29>`_\n        * Freedesktop `Secret Service\n          <http://standards.freedesktop.org/secret-service/>`_ supports many DE including\n          GNOME (requires `secretstorage <https://pypi.python.org/pypi/secretstorage>`_)\n        * KDE4 & KDE5 `KWallet <https://en.wikipedia.org/wiki/KWallet>`_\n          (requires `dbus <https://pypi.python.org/pypi/dbus-python>`_)\n        * `Windows Credential Locker\n          <https://docs.microsoft.com/en-us/windows/uwp/security/credential-locker>`_\n        \n        Other keyring implementations are available through `Third-Party Backends`_.\n        \n        -------------------------\n        Installation Instructions\n        -------------------------\n        \n        Install from Index\n        ==================\n        \n        Install using your favorite installer. For example:\n        \n            $ pip install keyring\n        \n        Linux\n        -----\n        \n        On Linux, the KWallet backend relies on dbus-python_, which does not always\n        install correctly when using pip (compilation is needed). So we recommend\n        that dbus-python is installed as a system package. The same also applies to\n        the Secret Storage backend under Python 2 (under Python 3 a different D-Bus\n        implementation is used).\n        \n        .. _dbus-python: https://gitlab.freedesktop.org/dbus/dbus-python\n        \n        -------------\n        Using Keyring\n        -------------\n        \n        The basic usage of keyring is pretty simple: just call `keyring.set_password`\n        and `keyring.get_password`:\n        \n            >>> import keyring\n            >>> keyring.set_password(\"system\", \"username\", \"password\")\n            >>> keyring.get_password(\"system\", \"username\")\n            'password'\n        \n        Command-line Utility\n        ====================\n        \n        Keyring supplies a ``keyring`` command which is installed with the\n        package. After installing keyring in most environments, the\n        command should be available for setting, getting, and deleting\n        passwords. For more information on usage, invoke with no arguments\n        or with ``--help`` as so::\n        \n            $ keyring --help\n            $ keyring set system username\n            Password for 'username' in 'system':\n            $ keyring get system username\n            password\n        \n        The command-line functionality is also exposed as an executable\n        package, suitable for invoking from Python like so::\n        \n            $ python -m keyring --help\n            $ python -m keyring set system username\n            Password for 'username' in 'system':\n            $ python -m keyring get system username\n            password\n        \n        --------------------------\n        Configure your keyring lib\n        --------------------------\n        \n        The python keyring lib contains implementations for several backends. The\n        library will\n        automatically choose the keyring that is most suitable for your current\n        environment. You can also specify the keyring you like to be used in the\n        config file or by calling the ``set_keyring()`` function.\n        \n        Customize your keyring by config file\n        =====================================\n        \n        This section describes how to change your option in the config file.\n        \n        Config file path\n        ----------------\n        \n        The configuration of the lib is stored in a file named \"keyringrc.cfg\". This\n        file must be found in a platform-specific location. To determine\n        where the config file is stored, run the following::\n        \n            python -c \"import keyring.util.platform_; print(keyring.util.platform_.config_root())\"\n        \n        Some keyrings also store the keyring data in the file system. To determine\n        where the data files are stored, run this command::\n        \n            python -c \"import keyring.util.platform_; print(keyring.util.platform_.data_root())\"\n        \n        \n        Config file content\n        -------------------\n        \n        To specify a keyring backend, set the **default-keyring** option to the\n        full path of the class for that backend, such as\n        ``keyring.backends.OS_X.Keyring``.\n        \n        If **keyring-path** is indicated, keyring will add that path to the Python\n        module search path before loading the backend.\n        \n        For example, this config might be used to load the\n        ``SimpleKeyring`` from the ``simplekeyring`` module in\n        the ``./demo`` directory (not implemented)::\n        \n            [backend]\n            default-keyring=simplekeyring.SimpleKeyring\n            keyring-path=demo\n        \n        Third-Party Backends\n        ====================\n        \n        In addition to the backends provided by the core keyring package for\n        the most common and secure use cases, there\n        are additional keyring backend implementations available for other\n        use-cases. Simply install them to make them available:\n        \n        - `keyrings.cryptfile <https://pypi.org/project/keyrings.cryptfile>`_\n          - Encrypted text file storage.\n        - `keyring_jeepney <https://pypi.org/project/keyring_jeepney>`__ - a\n          pure Python backend using the secret service DBus API for desktop\n          Linux.\n        - `keyrings.alt <https://pypi.org/project/keyrings.alt>`_ - \"alternate\",\n          possibly-insecure backends, originally part of the core package, but\n          available for opt-in.\n        - `gsheet-keyring <https://pypi.org/project/gsheet-keyring>`_\n          - a backend that stores secrets in a Google Sheet. For use with\n          `ipython-secrets <https://pypi.org/project/ipython-secrets>`_.\n        - `bitwarden-keyring <https://pypi.org/project/bitwarden-keyring/0.1.0/>`_\n          - a backend that stores secrets in the `BitWarden <https://bitwarden.com/>`_\n          password manager.\n        \n        \n        Write your own keyring backend\n        ==============================\n        \n        The interface for the backend is defined by ``keyring.backend.KeyringBackend``.\n        Every backend should derive from that base class and define a ``priority``\n        attribute and three functions: ``get_password()``, ``set_password()``, and\n        ``delete_password()``. The ``get_credential()`` function may be defined if\n        desired.\n        \n        See the ``backend`` module for more detail on the interface of this class.\n        \n        Keyring employs entry points to allow any third-party package to implement\n        backends without any modification to the keyring itself. Those interested in\n        creating new backends are encouraged to create new, third-party packages\n        in the ``keyrings`` namespace, in a manner modeled by the `keyrings.alt\n        package <https://github.com/jaraco/keyrings.alt>`_. See the ``setup.py`` file\n        in that project for a hint on how to create the requisite entry points.\n        Backends that prove essential may be considered for inclusion in the core\n        library, although the ease of installing these third-party packages should\n        mean that extensions may be readily available.\n        \n        If you've created an extension for Keyring, please submit a pull request to\n        have your extension mentioned as an available extension.\n        \n        Set the keyring in runtime\n        ==========================\n        \n        Keyring additionally allows programmatic configuration of the\n        backend calling the api ``set_keyring()``. The indicated backend\n        will subsequently be used to store and retrieve passwords.\n        \n        Here's an example demonstrating how to invoke ``set_keyring``::\n        \n            # define a new keyring class which extends the KeyringBackend\n            import keyring.backend\n        \n            class TestKeyring(keyring.backend.KeyringBackend):\n                \"\"\"A test keyring which always outputs same password\n                \"\"\"\n                priority = 1\n        \n                def set_password(self, servicename, username, password):\n                    pass\n        \n                def get_password(self, servicename, username):\n                    return \"password from TestKeyring\"\n        \n                def delete_password(self, servicename, username, password):\n                    pass\n        \n            # set the keyring for keyring lib\n            keyring.set_keyring(TestKeyring())\n        \n            # invoke the keyring lib\n            try:\n                keyring.set_password(\"demo-service\", \"tarek\", \"passexample\")\n                print(\"password stored successfully\")\n            except keyring.errors.PasswordSetError:\n                print(\"failed to store password\")\n            print(\"password\", keyring.get_password(\"demo-service\", \"tarek\"))\n        \n        \n        Using Keyring on Ubuntu 16.04\n        =============================\n        \n        The following is a complete transcript for installing keyring in a\n        virtual environment on Ubuntu 16.04.  No config file was used.::\n        \n          $ sudo apt install python3-venv libdbus-glib-1-dev\n          $ cd /tmp\n          $ pyvenv py3\n          $ source py3/bin/activate\n          $ pip install -U pip\n          $ pip install secretstorage dbus-python\n          $ pip install keyring\n          $ python\n          >>> import keyring\n          >>> keyring.get_keyring()\n          <keyring.backends.SecretService.Keyring object at 0x7f9b9c971ba8>\n          >>> keyring.set_password(\"system\", \"username\", \"password\")\n          >>> keyring.get_password(\"system\", \"username\")\n          'password'\n        \n        \n        Using Keyring on headless Linux systems\n        =======================================\n        \n        It is possible to use the SecretService backend on Linux systems without\n        X11 server available (only D-Bus is required). To do that, you need the\n        following:\n        \n        * Install the `GNOME Keyring`_ daemon.\n        * Start a D-Bus session, e.g. run ``dbus-run-session -- sh`` and run\n          the following commands inside that shell.\n        * Run ``gnome-keyring-daemon`` with ``--unlock`` option. The description of\n          that option says:\n        \n              Read a password from stdin, and use it to unlock the login keyring\n              or create it if the login keyring does not exist.\n        \n          When that command is started, enter your password into stdin and\n          press Ctrl+D (end of data). After that the daemon will fork into\n          background (use ``--foreground`` option to prevent that).\n        * Now you can use the SecretService backend of Keyring. Remember to\n          run your application in the same D-Bus session as the daemon.\n        \n        .. _GNOME Keyring: https://wiki.gnome.org/Projects/GnomeKeyring\n        \n        -----------------------------------------------\n        Integrate the keyring lib with your application\n        -----------------------------------------------\n        \n        API interface\n        =============\n        \n        The keyring lib has a few functions:\n        \n        * ``get_keyring()``: Return the currently-loaded keyring implementation.\n        * ``get_password(service, username)``: Returns the password stored in the\n          active keyring. If the password does not exist, it will return None.\n        * ``get_credential(service, username)``: Return a credential object stored\n          in the active keyring. This object contains at least ``username`` and\n          ``password`` attributes for the specified service, where the returned\n          ``username`` may be different from the argument.\n        * ``set_password(service, username, password)``: Store the password in the\n          keyring.\n        * ``delete_password(service, username)``: Delete the password stored in\n          keyring. If the password does not exist, it will raise an exception.\n        \n        In all cases, the parameters (``service``, ``username``, ``password``)\n        should be Unicode text. On Python 2, these parameters are accepted as\n        simple ``str`` in the default encoding as they will be implicitly\n        decoded to text. Some backends may accept ``bytes`` for these parameters,\n        but such usage is discouraged.\n        \n        \n        Exceptions\n        ==========\n        \n        The keyring lib raises following exceptions:\n        \n        * ``keyring.errors.KeyringError``: Base Error class for all exceptions in keyring lib.\n        * ``keyring.errors.InitError``: Raised when the keyring can't be initialized.\n        * ``keyring.errors.PasswordSetError``: Raise when password can't be set in the keyring.\n        * ``keyring.errors.PasswordDeleteError``: Raised when the password can't be deleted in the keyring.\n        \n        ------------\n        Get involved\n        ------------\n        \n        Python keyring lib is an open community project and highly welcomes new\n        contributors.\n        \n        * Repository: https://github.com/jaraco/keyring/\n        * Bug Tracker: https://github.com/jaraco/keyring/issues/\n        * Mailing list: http://groups.google.com/group/python-keyring\n        \n        Making Releases\n        ===============\n        \n        This project makes use of automated releases via Travis-CI. The\n        simple workflow is to tag a commit and push it to Github. If it\n        passes tests on a late Python version, it will be automatically\n        deployed to PyPI.\n        \n        Other things to consider when making a release:\n        \n         - first ensure that tests pass (preferably on Windows and Linux)\n         - check that the changelog is current for the intended release\n        \n        Running Tests\n        =============\n        \n        Tests are `continuously run <https://travis-ci.org/#!/jaraco/keyring>`_ using\n        Travis-CI.\n        \n        To run the tests yourself, you'll want keyring installed to some environment\n        in which it can be tested. Recommended technique is described below.\n        \n        Using tox\n        ---------\n        \n        Keyring prefers use of `tox <https://pypi.org/project/tox>`_ to run tests.\n        Simply install and invoke ``tox``.\n        \n        This technique is the one used by the Travis-CI script.\n        \n        ----------\n        Background\n        ----------\n        \n        The project was based on Tarek Ziade's idea in `this post`_. Kang Zhang\n        initially carried it out as a `Google Summer of Code`_ project, and Tarek\n        mentored Kang on this project.\n        \n        .. _this post: http://tarekziade.wordpress.com/2009/03/27/pycon-hallway-session-1-a-keyring-library-for-python/\n        .. _Google Summer of Code: http://socghop.appspot.com/\n        \n        \n        .. image:: https://badges.gitter.im/jaraco/keyring.svg\n           :alt: Join the chat at https://gitter.im/jaraco/keyring\n           :target: https://gitter.im/jaraco/keyring?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\n        ",
+        "home_page": "https://github.com/jaraco/keyring",
+        "author": "Kang Zhang",
+        "author_email": "jobo.zh@gmail.com",
+        "maintainer": "Jason R. Coombs",
+        "maintainer_email": "jaraco@jaraco.com",
+        "license": "UNKNOWN",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "License :: OSI Approved :: Python Software Foundation License",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3.3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7"
+        ],
+        "requires_dist": [
+          "secretstorage<3 ; (sys_platform == \"linux2\" or sys_platform == \"linux\") and python_version < \"3.5\"",
+          "secretstorage ; sys_platform == \"linux\" and python_version >= \"3.5\"",
+          "pywin32-ctypes!=0.1.0,!=0.1.1 ; sys_platform == \"win32\"",
+          "jaraco.packaging>=3.2 ; extra == \"docs\"",
+          "rst.linker>=1.9 ; extra == \"docs\"",
+          "sphinx ; extra == \"docs\"",
+          "pytest!=3.7.3,>=3.5 ; extra == \"testing\"",
+          "pytest-checkdocs ; extra == \"testing\"",
+          "pytest-flake8 ; extra == \"testing\""
+        ],
+        "requires_python": ">=2.7",
+        "provides_extra": [
+          "docs",
+          "testing"
+        ]
+      },
+      "metadata_location": "/usr/lib/python3/dist-packages/keyring-17.1.1.egg-info"
+    },
+    {
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "keyrings.alt",
+        "version": "3.1.1",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Alternate keyring implementations",
+        "description": ".. image:: https://img.shields.io/pypi/v/keyrings.alt.svg\n           :target: https://pypi.org/project/keyrings.alt\n        \n        .. image:: https://img.shields.io/pypi/pyversions/keyrings.alt.svg\n        \n        .. image:: https://img.shields.io/travis/jaraco/keyrings.alt/master.svg\n           :target: https://travis-ci.org/jaraco/keyrings.alt\n        \n        .. image:: https://img.shields.io/appveyor/ci/jaraco/keyrings-alt/master.svg\n           :target: https://ci.appveyor.com/project/jaraco/keyrings-alt/branch/master\n        \n        .. image:: https://readthedocs.org/projects/keyringsalt/badge/?version=latest\n           :target: https://keyringsalt.readthedocs.io/en/latest/?badge=latest\n        \n        Alternate keyring backend implementations for use with the\n        `keyring package <https://pypi.python.org/pypi/keyring>`_.\n        \n        Keyrings in this package may have security risks or other implications. These\n        backends were extracted from the main keyring project to\n        make them available for those who wish to employ them, but are\n        discouraged for general production use. Include this module and use its\n        backends at your own risk.\n        ",
+        "home_page": "https://github.com/jaraco/keyrings.alt",
+        "author": "Jason R. Coombs",
+        "author_email": "jaraco@jaraco.com",
+        "license": "UNKNOWN",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3"
+        ],
+        "requires_dist": [
+          "jaraco.packaging>=3.2 ; extra == \"docs\"",
+          "rst.linker>=1.9 ; extra == \"docs\"",
+          "sphinx ; extra == \"docs\"",
+          "backports.unittest_mock ; extra == \"testing\"",
+          "fs<2,>=0.5 ; extra == \"testing\"",
+          "keyring[test]>=10.3.1 ; extra == \"testing\"",
+          "pytest!=3.7.3,>=3.5 ; extra == \"testing\"",
+          "pytest-checkdocs ; extra == \"testing\"",
+          "pytest-flake8 ; extra == \"testing\"",
+          "gdata ; (python_version == \"2.7\") and extra == \"testing\"",
+          "python-keyczar ; (python_version == \"2.7\") and extra == \"testing\"",
+          "pycrypto ; (sys_platform != \"win32\" or python_version == \"2.7\") and extra == \"testing\""
+        ],
+        "requires_python": ">=2.7",
+        "provides_extra": [
+          "docs",
+          "testing"
+        ]
+      },
+      "metadata_location": "/usr/lib/python3/dist-packages/keyrings.alt-3.1.1.egg-info"
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.1",
+        "name": "pycairo",
+        "version": "1.16.2",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Python interface for cairo",
+        "description": ".. image:: https://cdn.rawgit.com/pygobject/pycairo/master/docs/images/pycairo.svg\n           :align: center\n           :width: 370px\n        \n        |\n        \n        Pycairo is a Python module providing bindings for the `cairo graphics library\n        <https://cairographics.org/>`__. It depends on **cairo >= 1.13.1** and\n        works with **Python 2.7+** as well as **Python 3.3+**. Pycairo, including this\n        documentation, is licensed under the **LGPLv2.1** as well as the **MPLv1.1**.\n        \n        The Pycairo bindings are designed to match the cairo C API as closely as\n        possible, and to deviate only in cases which are clearly better implemented in\n        a more ‘Pythonic’ way.\n        \n        Features of the Pycairo bindings:\n        \n        * Provides an object oriented interface to cairo.\n        * Queries the error status of objects and translates them to exceptions.\n        * Provides a C API that can be used by other Python extensions.\n        \n        ----\n        \n        .. image:: https://cdn.rawgit.com/pygobject/pycairo/master/docs/images/example.svg\n           :align: right\n           :width: 200px\n        \n        .. code:: python\n        \n            import cairo\n        \n            surface = cairo.SVGSurface(\"example.svg\", 200, 200)\n            context = cairo.Context(surface)\n            x, y, x1, y1 = 0.1, 0.5, 0.4, 0.9\n            x2, y2, x3, y3 = 0.6, 0.1, 0.9, 0.5\n            context.scale(200, 200)\n            context.set_line_width(0.04)\n            context.move_to(x, y)\n            context.curve_to(x1, y1, x2, y2, x3, y3)\n            context.stroke()\n            context.set_source_rgba(1, 0.2, 0.2, 0.6)\n            context.set_line_width(0.02)\n            context.move_to(x, y)\n            context.line_to(x1, y1)\n            context.move_to(x2, y2)\n            context.line_to(x3, y3)\n            context.stroke()\n            surface.finish()\n        \n        ----\n        \n        If Pycairo is not what you need, have a look at `cairocffi\n        <https://cairocffi.readthedocs.io>`__, which is an API compatible package\n        using `cffi <https://cffi.readthedocs.io/>`__ or `Qahirah\n        <https://github.com/ldo/qahirah>`__, which is using `ctypes\n        <https://docs.python.org/3/library/ctypes.html>`__ and provides a more\n        \"pythonic\" API with less focus on matching the cairo C API.\n        \n        For more information visit https://pycairo.readthedocs.io\n        \n        .. image:: https://travis-ci.org/pygobject/pycairo.svg?branch=master\n            :target: https://travis-ci.org/pygobject/pycairo\n        \n        .. image:: https://ci.appveyor.com/api/projects/status/9hurdbb19lg2i9xm/branch/master?svg=true\n            :target: https://ci.appveyor.com/project/lazka/pycairo/branch/master\n        \n        .. image:: https://codecov.io/gh/pygobject/pycairo/branch/master/graph/badge.svg\n          :target: https://codecov.io/gh/pygobject/pycairo\n        ",
+        "home_page": "https://pycairo.readthedocs.io",
+        "author": "Christoph Reiter",
+        "author_email": "reiter.christoph@gmail.com",
+        "license": "UNKNOWN",
+        "classifier": [
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
+          "License :: OSI Approved :: Mozilla Public License 1.1 (MPL 1.1)"
+        ]
+      },
+      "metadata_location": null
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.1",
+        "name": "pycrypto",
+        "version": "2.6.1",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Cryptographic modules for Python.",
+        "description": "UNKNOWN",
+        "home_page": "http://www.pycrypto.org/",
+        "author": "Dwayne C. Litzenberger",
+        "author_email": "dlitz@dlitz.net",
+        "license": "UNKNOWN",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "License :: Public Domain",
+          "Intended Audience :: Developers",
+          "Operating System :: Unix",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: MacOS :: MacOS X",
+          "Topic :: Security :: Cryptography",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 3"
+        ]
+      },
+      "metadata_location": null
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.1",
+        "name": "pycurl",
+        "version": "7.43.0.2",
+        "platform": [
+          "All"
+        ],
+        "summary": "PycURL -- A Python Interface To The cURL library",
+        "description": "PycURL -- A Python Interface To The cURL library\n        ================================================\n        \n        PycURL is a Python interface to `libcurl`_, the multiprotocol file\n        transfer library. Similarly to the urllib_ Python module,\n        PycURL can be used to fetch objects identified by a URL from a Python program.\n        Beyond simple fetches however PycURL exposes most of the functionality of\n        libcurl, including:\n        \n        - Speed - libcurl is very fast and PycURL, being a thin wrapper above\n          libcurl, is very fast as well. PycURL `was benchmarked`_ to be several\n          times faster than requests_.\n        - Features including multiple protocol support, SSL, authentication and\n          proxy options. PycURL supports most of libcurl's callbacks.\n        - Multi_ and share_ interfaces.\n        - Sockets used for network operations, permitting integration of PycURL\n          into the application's I/O loop (e.g., using Tornado_).\n        \n        .. _was benchmarked: http://stackoverflow.com/questions/15461995/python-requests-vs-pycurl-performance\n        .. _requests: http://python-requests.org/\n        .. _Multi: https://curl.haxx.se/libcurl/c/libcurl-multi.html\n        .. _share: https://curl.haxx.se/libcurl/c/libcurl-share.html\n        .. _Tornado: http://www.tornadoweb.org/\n        \n        \n        Requirements\n        ------------\n        \n        - Python 2.7 or 3.4 through 3.6.\n        - libcurl 7.19.0 or better.\n        \n        \n        Installation\n        ------------\n        \n        Download source and binary distributions from `PyPI`_ or `Bintray`_.\n        Binary wheels are now available for 32 and 64 bit Windows versions.\n        \n        Please see `the installation documentation`_ for installation instructions.\n        \n        .. _PyPI: https://pypi.python.org/pypi/pycurl\n        .. _Bintray: https://dl.bintray.com/pycurl/pycurl/\n        .. _the installation documentation: http://pycurl.io/docs/latest/install.html\n        \n        \n        Documentation\n        -------------\n        \n        Documentation for the most recent PycURL release is available on\n        `PycURL website <http://pycurl.io/docs/latest/>`_.\n        \n        \n        Support\n        -------\n        \n        For support questions please use `curl-and-python mailing list`_.\n        `Mailing list archives`_ are available for your perusal as well.\n        \n        Although not an official support venue, `Stack Overflow`_ has been\n        popular with some PycURL users.\n        \n        Bugs can be reported `via GitHub`_. Please use GitHub only for bug\n        reports and direct questions to our mailing list instead.\n        \n        .. _curl-and-python mailing list: http://cool.haxx.se/mailman/listinfo/curl-and-python\n        .. _Stack Overflow: http://stackoverflow.com/questions/tagged/pycurl\n        .. _Mailing list archives: https://curl.haxx.se/mail/list.cgi?list=curl-and-python\n        .. _via GitHub: https://github.com/pycurl/pycurl/issues\n        \n        \n        License\n        -------\n        \n        PycURL is dual licensed under the LGPL and an MIT/X derivative license\n        based on the libcurl license. The complete text of the licenses is available\n        in COPYING-LGPL_ and COPYING-MIT_ files in the source distribution.\n        \n        .. _libcurl: https://curl.haxx.se/libcurl/\n        .. _urllib: http://docs.python.org/library/urllib.html\n        .. _COPYING-LGPL: https://raw.githubusercontent.com/pycurl/pycurl/master/COPYING-LGPL\n        .. _COPYING-MIT: https://raw.githubusercontent.com/pycurl/pycurl/master/COPYING-MIT\n        ",
+        "keywords": [
+          "curl",
+          "libcurl",
+          "urllib",
+          "wget",
+          "download",
+          "file transfer",
+          "http",
+          "www"
+        ],
+        "home_page": "http://pycurl.io/",
+        "author": "Oleg Pudeyev",
+        "author_email": "oleg@bsdpower.com",
+        "license": "LGPL/MIT",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: Microsoft :: Windows",
+          "Operating System :: POSIX",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.4",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6",
+          "Topic :: Internet :: File Transfer Protocol (FTP)",
+          "Topic :: Internet :: WWW/HTTP"
+        ]
+      },
+      "metadata_location": null
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.0",
+        "name": "python-apt",
+        "version": "1.8.4.3",
+        "platform": [
+          "posix"
+        ],
+        "summary": "Python bindings for APT",
+        "description": "UNKNOWN",
+        "home_page": "UNKNOWN",
+        "author": "APT Development Team",
+        "author_email": "deity@lists.debian.org",
+        "license": "GNU GPL"
+      },
+      "metadata_location": null
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.1",
+        "name": "pyxdg",
+        "version": "0.25",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "PyXDG contains implementations of freedesktop.org standards in python.",
+        "description": "UNKNOWN",
+        "home_page": "http://freedesktop.org/wiki/Software/pyxdg",
+        "author": "Freedesktop.org",
+        "author_email": "xdg@lists.freedesktop.org",
+        "license": "UNKNOWN",
+        "classifier": [
+          "License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
+          "Programming Language :: Python :: 2.6",
+          "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
+          "Topic :: Desktop Environment"
+        ]
+      },
+      "metadata_location": null
+    },
+    {
+      "metadata": {
+        "metadata_version": "1.2",
+        "name": "six",
+        "version": "1.12.0",
+        "platform": [
+          "UNKNOWN"
+        ],
+        "summary": "Python 2 and 3 compatibility utilities",
+        "description": ".. image:: https://img.shields.io/pypi/v/six.svg\n           :target: https://pypi.org/project/six/\n           :alt: six on PyPI\n        \n        .. image:: https://travis-ci.org/benjaminp/six.svg?branch=master\n           :target: https://travis-ci.org/benjaminp/six\n           :alt: six on TravisCI\n        \n        .. image:: https://readthedocs.org/projects/six/badge/?version=latest\n           :target: https://six.readthedocs.io/\n           :alt: six's documentation on Read the Docs\n        \n        .. image:: https://img.shields.io/badge/license-MIT-green.svg\n           :target: https://github.com/benjaminp/six/blob/master/LICENSE\n           :alt: MIT License badge\n        \n        Six is a Python 2 and 3 compatibility library.  It provides utility functions\n        for smoothing over the differences between the Python versions with the goal of\n        writing Python code that is compatible on both Python versions.  See the\n        documentation for more information on what is provided.\n        \n        Six supports every Python version since 2.6.  It is contained in only one Python\n        file, so it can be easily copied into your project. (The copyright and license\n        notice must be retained.)\n        \n        Online documentation is at https://six.readthedocs.io/.\n        \n        Bugs can be reported to https://github.com/benjaminp/six.  The code can also\n        be found there.\n        \n        For questions about six or porting in general, email the python-porting mailing\n        list: https://mail.python.org/mailman/listinfo/python-porting\n        ",
+        "home_page": "https://github.com/benjaminp/six",
+        "author": "Benjamin Peterson",
+        "author_email": "benjamin@python.org",
+        "license": "MIT",
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 3",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Topic :: Software Development :: Libraries",
+          "Topic :: Utilities"
+        ],
+        "requires_python": ">=2.6, !=3.0.*, !=3.1.*"
+      },
+      "metadata_location": "/usr/lib/python3/dist-packages/six-1.12.0.egg-info"
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.7.3",
+    "os_name": "posix",
+    "platform_machine": "aarch64",
+    "platform_release": "4.4.154-116-rockchip-g86a614bc15b3",
+    "platform_system": "Linux",
+    "platform_version": "#1 SMP Mon Jan 10 12:03:08 UTC 2022",
+    "python_full_version": "3.7.3",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.7",
+    "sys_platform": "linux"
+  }
+}
