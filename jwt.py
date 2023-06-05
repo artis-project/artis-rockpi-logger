@@ -1,50 +1,44 @@
-import json
 import base64
-from artis_api import ArtisAPI
-from eth_utils.crypto import keccak
+import datetime
+
 from eth_abi.abi import encode
 from eth_account import Account
 from web3 import Web3
+import json
 
-api = ArtisAPI()
-data = {
+def encode_dict_base64(data: dict):
+    return base64.b64encode(json.dumps(data).encode("utf-8")).decode("utf-8")
+
+def issue_token(private_key: str):
+  """issue a jwt token signed with the private key of the user"""
+  if private_key is None:
+    raise ValueError("missing private key")
+  try:
+    subject = Account.from_key(private_key)
+  except Exception:
+    raise ValueError("invalid private key")
+  timestamp = datetime.datetime.now().timestamp()
+  payload = {
     "iss": "ARTIS-Project",
-    "sub": "did:ethr:0x64EE2b0872CddFfa8F63C65c03216404F5D19164",
+    "sub": f"did:ethr:{subject.address}",
     "aud": "ARTIS-API",
-    "iat": 1623345600,
-    "exp": 1623349200,
-}
-header = {
-  "alg": "ECDSA",
-  "typ": "JWT"
-}
+    "iat": timestamp,
+    "exp": timestamp + 3600,
+  }
+  header = {"alg": "ECDSA", "typ": "JWT"}
 
-def encode_base64(data):
-    json_data = json.dumps(data).encode('utf-8')
-    base64_data = base64.b64encode(json_data).decode('utf-8')
-    return base64_data
+  base64_header = encode_dict_base64(header)
+  base64_payload = encode_dict_base64(payload)
 
-base64_header = encode_base64(header)
-base64_payload = encode_base64(data)
-signature_data = f"{base64_header}.{base64_payload}"
-signature = api._sign(signature_data)
-token = ".".join([base64_header, base64_payload, signature])
-#print("header: ", base64_header)
-#print("payload: ", base64_payload)
-#print("signature: ", signature)
-print("token: ", token)
+  signature_data = f"{base64_header}.{base64_payload}"
 
-# Sign the message using the Ethereum account
-header, payload, signature = token.split('.')
-print(signature)
-MESSAGE = token[:token.rfind('.')]
-print(MESSAGE)
-decoded_payload = json.loads(base64.b64decode(payload).decode('utf-8'))
-did = decoded_payload.get('sub')
-print("did: ", did)
-# The signature you want to verify
-encoded = encode(['string'], [MESSAGE])
-keccak_hash = Web3.keccak(encoded)
-# The public key you want to use to verify the signature
+  encoded = encode(["string"], [signature_data])
+  hashed = Web3.keccak(encoded)
+  signature = subject.signHash(hashed).signature.hex()
+  print(type(signature))
+  signature = base64.b64encode(
+    subject.signHash(hashed).signature.hex().encode("utf-8")
+  ).decode("utf-8")
 
-print("account: ", Account._recover_hash(keccak_hash, signature=signature))
+  token = ".".join([base64_header, base64_payload, signature])
+  return token

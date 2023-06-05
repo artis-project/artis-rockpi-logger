@@ -6,6 +6,10 @@ from eth_account import Account
 from web3 import Web3
 from dotenv import load_dotenv
 from pprint import pprint
+from jwt import issue_token
+import base64
+import json
+import datetime
 
 load_dotenv()
 
@@ -19,17 +23,24 @@ class ArtisAPI:
         self.base_url = os.environ.get('ARTIS_API_URL')
         self.__signing_key = os.environ.get('ARTIS_LOGGER_SIGNING_KEY')
         self.artwork_id = os.environ.get('ARTIS_LOGGER_ARTWORK_ID')
-        self.logger_address = os.environ.get('ARTIS_LOGGER_ADDRESS')
-        self.did = f'did:ethr:{self.logger_address}'
+        # self.logger_address = os.environ.get('ARTIS_LOGGER_ADDRESS')
+        # self.did = f'did:ethr:{self.logger_address}'
     
+    def __refresh_token(self):
+        get_exp = lambda token: json.loads(base64.b64decode(token.split('.')[1]).decode("utf-8")).get('exp')
+        token = os.environ.get('ARTIS_API_AUTH_TOKEN')
+        if token is None or get_exp(token) < datetime.datetime.now().timestamp():
+            os.environ['ARTIS_API_AUTH_TOKEN'] = issue_token(self.__signing_key)
+        return os.environ.get('ARTIS_API_AUTH_TOKEN')
 
     def report_violation(self, timestamp: int, violationType: ViolationType, value: float) -> None:
         # makin a patch request to the api
-        url = f'{self.base_url}/artworks/{self.artwork_id}'
+        url = f"{self.base_url}/artworks/{self.artwork_id}"
         headers = {
             'Content-Type': 'application/json',
-            'Did': self.did,
-            'Signature': self._sign(self.did),
+            'Authorization': f'Bearer {self.__refresh_token()}'
+            # 'Did': self.did,
+            # 'Signature': self._sign(self.did),
         }
         data = {
             'violationTimestamp': timestamp,
