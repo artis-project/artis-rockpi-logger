@@ -46,7 +46,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS readings
 # to 15 times to get a sensor reading (waiting 2 seconds between each retry).
 try:
     while True:
-        humidity, temperature = Rockfruit_DHT.read_retry(sensor, pin)
+        humidity, temperature = Rockfruit_DHT.read_retry(sensor, pin, retries=10)
         timestamp = datetime.datetime.now()
         # Un-comment the line below to convert the temperature to Fahrenheit.
         # temperature = temperature * 9/5.0 + 32

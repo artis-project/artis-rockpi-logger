@@ -6,24 +6,18 @@ from artis_api import ArtisAPI, ViolationType
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--temperature-threshold', type=int)
-parser.add_argument('--humidity-threshold', type=int)
+parser.add_argument('--temperature-threshold', type=int, required=False, default=30)
+parser.add_argument('--humidity-threshold', type=int, required=False, default=80)
+parser.add_argument('--artwork-id', type=int, required=True)
 args = parser.parse_args()
-
-if args.temperature_threshold is None or args.humidity_threshold is None:
-    print("Both temperature_threshold and humidity_threshold must be provided.")
-    sys.exit(1)
-elif not isinstance(args.temperature_threshold, int) or not isinstance(args.humidity_threshold, int):
-    print("Both temperature_threshold and humidity_threshold must be integers.")
-    sys.exit(1)
 
 TEMPERATURE_THRESHOLD = args.temperature_threshold
 HUMIDITY_THRESHOLD = args.humidity_threshold
-
+ARTWORK_ID = args.artwork_id
 # Connect to the SQLite database.
 conn = sqlite3.connect('readings.db')
 c = conn.cursor()
-api = ArtisAPI()
+api = ArtisAPI(ARTWORK_ID)
 # Keep track of the last timestamp that we saw.
 last_timestamp = None
 

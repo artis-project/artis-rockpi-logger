@@ -19,10 +19,10 @@ class ViolationType(Enum):
 
 class ArtisAPI:
 
-    def __init__(self):
+    def __init__(self, artwork_id: str):
         self.base_url = self.__getApiUrl()
         self.__signing_key = os.environ.get('ARTIS_LOGGER_SIGNING_KEY')
-        self.artwork_id = os.environ.get('ARTIS_LOGGER_ARTWORK_ID')
+        self.artwork_id = artwork_id
         # self.logger_address = os.environ.get('ARTIS_LOGGER_ADDRESS')
         # self.did = f'did:ethr:{self.logger_address}'
 

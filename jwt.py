@@ -35,7 +35,6 @@ def issue_token(private_key: str):
   encoded = encode(["string"], [signature_data])
   hashed = Web3.keccak(encoded)
   signature = subject.signHash(hashed).signature.hex()
-  print(type(signature))
   signature = base64.b64encode(
     subject.signHash(hashed).signature.hex().encode("utf-8")
   ).decode("utf-8")
