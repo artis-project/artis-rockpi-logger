@@ -68,7 +68,7 @@ sudo python3 setup.py install
 The logging script can be started with this command:
 
 ```bash
-sudo .venv/bin/python3 logging_script.py
+sudo .venv/bin/python3 logging_script.py 22 <connected pin>
 ```
 
 This script records and stores valid readings in a local database. To detect and report any violations a different script is run simultaneously.
