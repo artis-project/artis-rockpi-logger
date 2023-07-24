@@ -63,18 +63,18 @@ try:
         # If this happens try again!
         if humidity is not None and temperature is not None:
             print("Temp={0:0.1f}*  Humidity={1:0.1f}%".format(temperature, humidity))
-            c.execute(
-                "INSERT INTO readings VALUES (?, ?, ?, ?)",
-                (
-                    timestamp.strftime("%Y-%m-%d %H:%M:%S"),
-                    int(timestamp.timestamp()),
-                    temperature,
-                    humidity,
-                ),
-            )
-            conn.commit()
         else:
-            print(f"{timestamp}: Failed to get reading...")
+            print(f"{int(timestamp.timestamp())} failed to get a reading...")
+        c.execute(
+            "INSERT INTO readings VALUES (?, ?, ?, ?)",
+            (
+                timestamp.strftime("%Y-%m-%d %H:%M:%S"),
+                int(timestamp.timestamp()),
+                temperature,
+                humidity,
+            ),
+        )
+        conn.commit()
 
 except KeyboardInterrupt:
     print("\nExiting...")
