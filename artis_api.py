@@ -7,7 +7,6 @@ from web3 import Web3
 from dotenv import load_dotenv
 from pprint import pprint
 from authenticator import Authenticator
-from jwt import issue_token
 import base64
 import json
 import datetime
@@ -54,7 +53,7 @@ class ArtisAPI:
         url = (
             f"https://api.github.com/orgs/{org_name}/actions/variables/{variable_name}"
         )
-        return "http://localhost:8080"
+        print(url)
         return (
             requests.get(url, headers={"Authorization": f"Bearer {access_token}"})
             .json()

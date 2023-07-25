@@ -41,6 +41,9 @@ try:
             result = c.fetchone()
             temperature = result[0]
             humidity = result[1]
+            if temperature is None or humidity is None:
+                last_timestamp = latest_timestamp
+                continue
             # check if temperature is too high
             if temperature > TEMPERATURE_THRESHOLD:
                 print("Temperature violation!")
