@@ -46,13 +46,12 @@ conn = sqlite3.connect("readings.db")
 c = conn.cursor()
 c.execute(
     """CREATE TABLE IF NOT EXISTS readings
-             (time STRING, timestamp INTEGER, temperature REAL, humidity REAL, elapsed_time REAL)"""
+             (time STRING, timestamp INTEGER, temperature REAL, humidity REAL)"""
 )
 # Try to grab a sensor reading.  Use the read_retry method which will retry up
 # to 15 times to get a sensor reading (waiting 2 seconds between each retry).
 try:
     while True:
-        start_time = datetime.datetime.now()
         humidity, temperature = Rockfruit_DHT.read_retry(sensor, pin, retries=15)
         timestamp = datetime.datetime.now()
         # Un-comment the line below to convert the temperature to Fahrenheit.
@@ -63,18 +62,14 @@ try:
         # guarantee the timing of calls to read the sensor).
         # If this happens try again!
         if humidity is not None and temperature is not None:
-            end_time = datetime.datetime.now()
             print("Temp={0:0.1f}*  Humidity={1:0.1f}%".format(temperature, humidity))
-            elapsed_time = end_time - start_time
-            print(f"elapsed time: {elapsed_time.total_seconds()} seconds")
             c.execute(
-            "INSERT INTO readings VALUES (?, ?, ?, ?, ?)",
+            "INSERT INTO readings VALUES (?, ?, ?, ?)",
                 (
                     timestamp.strftime("%Y-%m-%d %H:%M:%S"),
                     int(timestamp.timestamp()),
                     temperature,
                     humidity,
-                    elapsed_time.total_seconds(),
                 ),
             )
             conn.commit()
